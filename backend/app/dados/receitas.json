@@ -1,0 +1,3930 @@
+{
+ "carne0": {
+  "tempo": "1h20",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 kg de lagarto ou miolo de alcatra",
+   "3 colheres (sopa) de mostarda Dijon",
+   "2 colheres (sopa) de mostarda em grãos",
+   "200 ml de creme de leite",
+   "4 dentes de alho",
+   "2 ramos de alecrim",
+   "Azeite, sal e pimenta-do-reino"
+  ],
+  "preparo": [
+   "Tempere a carne com sal, pimenta, alho amassado e 1 colher de mostarda Dijon. Deixe 30 min.",
+   "Sele a peça inteira em frigideira bem quente com azeite, dourando todos os lados.",
+   "Leve ao forno a 200 °C com o alecrim por 25 a 35 min (ponto rosado). Descanse 10 min coberta.",
+   "Na mesma frigideira, junte o restante das mostardas e o creme de leite; aqueça até engrossar e acerte o sal.",
+   "Fatie a carne bem fino e sirva com o molho por cima."
+  ],
+  "compras": [
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Lagarto ou miolo de alcatra",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Mostarda Dijon",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mostarda em grãos",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Creme de leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "ramo",
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "carne1": {
+  "tempo": "1h40",
+  "porcoes": 4,
+  "ingredientes": [
+   "800 g de acém ou músculo em cubos",
+   "3 batatas",
+   "2 cenouras",
+   "1 cebola",
+   "3 dentes de alho",
+   "2 tomates",
+   "1 colher (sopa) de extrato de tomate",
+   "1 litro de caldo de carne",
+   "Cheiro-verde, sal, pimenta e óleo"
+  ],
+  "preparo": [
+   "Tempere a carne com sal e pimenta e doure em panela de pressão com óleo, em levas.",
+   "Junte cebola e alho e refogue. Acrescente tomate picado e extrato.",
+   "Cubra com o caldo e cozinhe na pressão por 30 min após pegar pressão.",
+   "Abra a panela, junte batata e cenoura em cubos e cozinhe destampado até ficarem macias e o caldo encorpar.",
+   "Finalize com cheiro-verde."
+  ],
+  "compras": [
+   {
+    "qtd": 800.0,
+    "unidade": "g",
+    "nome": "Acém ou músculo",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "un",
+    "nome": "Batata",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Cenoura",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Extrato de tomate",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1000.0,
+    "unidade": "ml",
+    "nome": "Caldo de carne",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cheiro-verde",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Óleo",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne2": {
+  "tempo": "3h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1,2 kg de acém ou peito em peça",
+   "400 ml de vinho tinto seco",
+   "2 cebolas",
+   "2 cenouras",
+   "2 talos de salsão",
+   "4 dentes de alho",
+   "2 colheres (sopa) de extrato de tomate",
+   "500 ml de caldo de carne",
+   "2 folhas de louro e tomilho",
+   "Sal, pimenta e azeite"
+  ],
+  "preparo": [
+   "Tempere a carne e sele bem em panela pesada com azeite. Reserve.",
+   "Refogue cebola, cenoura, salsão e alho picados. Junte o extrato.",
+   "Despeje o vinho, raspe o fundo e deixe reduzir pela metade.",
+   "Volte a carne, junte caldo, louro e tomilho. Tampe e cozinhe em fogo baixo por 2h30 (ou 50 min na pressão).",
+   "Retire a carne, reduza o molho até ficar brilhante e sirva por cima da carne fatiada."
+  ],
+  "compras": [
+   {
+    "qtd": 1200.0,
+    "unidade": "g",
+    "nome": "Acém ou peito bovino (peça)",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 400.0,
+    "unidade": "ml",
+    "nome": "Vinho tinto seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Cenoura",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Salsão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Extrato de tomate",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "ml",
+    "nome": "Caldo de carne",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "folha",
+    "nome": "Louro",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne3": {
+  "tempo": "30 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 medalhões de filé mignon (cerca de 180 g cada)",
+   "2 colheres (sopa) de mostarda Dijon",
+   "200 ml de creme de leite fresco",
+   "1 cebola pequena ou 2 echalotas",
+   "50 ml de vinho branco (opcional)",
+   "1 colher (sopa) de manteiga",
+   "Sal, pimenta e azeite"
+  ],
+  "preparo": [
+   "Seque os medalhões, tempere com sal e pimenta.",
+   "Sele em frigideira bem quente com azeite e manteiga, 3 a 4 min de cada lado. Reserve.",
+   "Na mesma frigideira, refogue a cebola picada e deglaceie com o vinho.",
+   "Junte a mostarda e o creme de leite e cozinhe até ficar aveludado.",
+   "Volte os medalhões por 1 min no molho e sirva."
+  ],
+  "compras": [
+   {
+    "qtd": 720.0,
+    "unidade": "g",
+    "nome": "Filé mignon",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mostarda Dijon",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Creme de leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 50.0,
+    "unidade": "ml",
+    "nome": "Vinho branco seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne4": {
+  "tempo": "30 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de filé mignon em tiras",
+   "300 g de cogumelos paris fatiados",
+   "1 cebola",
+   "2 dentes de alho",
+   "2 colheres (sopa) de manteiga",
+   "1 colher (sopa) de molho inglês",
+   "Salsinha, sal e pimenta"
+  ],
+  "preparo": [
+   "Doure os cogumelos na manteiga com sal até perderem a água. Reserve.",
+   "Em frigideira bem quente, sele a carne em levas pequenas para não soltar água.",
+   "Junte cebola e alho e refogue rapidamente.",
+   "Volte os cogumelos, acrescente o molho inglês e 1/2 xícara de água para formar um molhinho.",
+   "Finalize com salsinha."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Filé mignon",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Cogumelos paris",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Molho inglês",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "carne5": {
+  "tempo": "2h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1,2 kg de fraldinha em peça",
+   "3 cebolas grandes",
+   "1 colher (sopa) de açúcar mascavo",
+   "2 colheres (sopa) de manteiga",
+   "4 dentes de alho",
+   "Sal grosso, pimenta e azeite"
+  ],
+  "preparo": [
+   "Tempere a fraldinha com alho, sal grosso e pimenta.",
+   "Embrulhe em papel-alumínio e asse a 200 °C por 1h. Retire o papel e doure por mais 20 a 30 min.",
+   "Enquanto isso, fatie as cebolas e cozinhe na manteiga em fogo baixo por 30 min, mexendo.",
+   "Junte o açúcar e deixe caramelizar até dourar.",
+   "Fatie a carne contra a fibra e sirva coberta com as cebolas."
+  ],
+  "compras": [
+   {
+    "qtd": 1200.0,
+    "unidade": "g",
+    "nome": "Fraldinha (peça)",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Açúcar mascavo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal grosso",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne6": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de carne moída (patinho)",
+   "1 cebola ralada",
+   "1/2 maço de salsinha",
+   "Folhas de hortelã",
+   "1 colher (chá) de pimenta síria",
+   "1 colher (chá) de cominho",
+   "Sal",
+   "Espetos de madeira",
+   "Coalhada seca e pão sírio para servir"
+  ],
+  "preparo": [
+   "Esprema bem a cebola ralada para tirar o líquido.",
+   "Misture a carne com cebola, salsinha e hortelã picadas e os temperos. Sove por 2 min.",
+   "Molde em formato alongado nos espetos. Leve à geladeira por 15 min.",
+   "Grelhe em frigideira, grelha ou forno bem quente, virando, até dourar (cerca de 10 min).",
+   "Sirva com coalhada seca e pão sírio."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Carne moída (patinho)",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "maço",
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Hortelã",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Pimenta síria",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Espetos de madeira",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Coalhada seca",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pão sírio",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne7": {
+  "tempo": "1h10",
+  "porcoes": 4,
+  "ingredientes": [
+   "600 g de carne moída",
+   "1 cebola ralada",
+   "Salsinha picada",
+   "1 colher (chá) de pimenta síria",
+   "4 batatas em rodelas",
+   "3 tomates em rodelas",
+   "1 xícara de molho de tomate",
+   "Azeite e sal"
+  ],
+  "preparo": [
+   "Tempere a carne com cebola espremida, salsinha, pimenta síria e sal.",
+   "Molde pequenas kaftas achatadas.",
+   "Numa travessa, alterne kafta, rodela de batata e rodela de tomate em fileiras.",
+   "Regue com molho de tomate diluído em 1/2 xícara de água e azeite.",
+   "Cubra com papel-alumínio e asse a 200 °C por 40 min; retire o papel e doure por 15 min."
+  ],
+  "compras": [
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Carne moída (patinho)",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Pimenta síria",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Batata",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "xícara",
+    "nome": "Molho de tomate",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "carne8": {
+  "tempo": "40 min + marinada",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de contrafilé ou miolo de acém bem fino",
+   "5 colheres (sopa) de shoyu",
+   "2 colheres (sopa) de açúcar mascavo",
+   "1 colher (sopa) de óleo de gergelim",
+   "4 dentes de alho",
+   "1 colher (sopa) de gengibre ralado",
+   "1/2 pera ralada (opcional)",
+   "1 cebola",
+   "Cebolinha e gergelim"
+  ],
+  "preparo": [
+   "Corte a carne em lâminas finíssimas (fica mais fácil levemente congelada).",
+   "Misture shoyu, açúcar, óleo de gergelim, alho, gengibre e pera. Marine a carne por no mínimo 30 min.",
+   "Aqueça bem uma frigideira e salteie a carne em levas com a cebola fatiada.",
+   "Finalize com cebolinha e gergelim.",
+   "Sirva com arroz branco."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Contrafilé",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 5.0,
+    "unidade": "c. sopa",
+    "nome": "Shoyu",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Açúcar mascavo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Óleo de gergelim",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Gengibre",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "un",
+    "nome": "Pera",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebolinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Gergelim",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne9": {
+  "tempo": "30 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "600 g de alcatra em tiras",
+   "1 brócolis ninja em floretes",
+   "4 colheres (sopa) de shoyu",
+   "1 colher (sopa) de amido de milho",
+   "1 colher (sopa) de mel ou açúcar",
+   "2 dentes de alho",
+   "1 colher (chá) de gengibre ralado",
+   "Óleo e gergelim"
+  ],
+  "preparo": [
+   "Misture a carne com 1 colher de shoyu e metade do amido.",
+   "Branqueie o brócolis por 2 min em água fervente e passe na água gelada.",
+   "Sele a carne em wok ou frigideira bem quente. Reserve.",
+   "Refogue alho e gengibre, volte a carne e o brócolis.",
+   "Junte o resto do shoyu, o mel e o amido dissolvido em 1/2 xícara de água; mexa até brilhar. Finalize com gergelim."
+  ],
+  "compras": [
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Alcatra",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Brócolis",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "c. sopa",
+    "nome": "Shoyu",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Amido de milho",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Mel ou açúcar",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Gengibre",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Óleo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Gergelim",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne10": {
+  "tempo": "3h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 kg de acém ou músculo em pedaços",
+   "1 cebola",
+   "1 cenoura",
+   "1 talo de salsão",
+   "3 dentes de alho",
+   "200 ml de vinho tinto",
+   "2 latas de tomate pelado",
+   "Louro, sal, pimenta e azeite",
+   "500 g de massa (pappardelle ou fettuccine)",
+   "Parmesão ralado"
+  ],
+  "preparo": [
+   "Sele a carne temperada em azeite. Reserve.",
+   "Refogue cebola, cenoura e salsão picadinhos e o alho.",
+   "Junte o vinho e deixe reduzir. Acrescente o tomate amassado e o louro.",
+   "Volte a carne, tampe e cozinhe em fogo baixo por 2h30 (ou 45 min na pressão), até desmanchar.",
+   "Desfie a carne no próprio molho. Misture com a massa cozida e sirva com parmesão."
+  ],
+  "compras": [
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Acém ou músculo",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cenoura",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Salsão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Vinho tinto seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "lata",
+    "nome": "Tomate pelado",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Louro",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Massa longa (pappardelle ou fettuccine)",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Parmesão ralado",
+    "secao": "Frios e laticínios"
+   }
+  ]
+ },
+ "carne11": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de fraldinha ou alcatra em tiras",
+   "1 pimentão vermelho",
+   "1 pimentão amarelo",
+   "1 cebola",
+   "Suco de 2 limões",
+   "1 colher (chá) de cominho",
+   "1 colher (chá) de páprica defumada",
+   "2 dentes de alho",
+   "8 tortillas",
+   "Guacamole, creme azedo e queijo para servir"
+  ],
+  "preparo": [
+   "Tempere a carne com limão, alho, cominho, páprica, sal e um fio de óleo. Deixe 20 min.",
+   "Corte pimentões e cebola em tiras.",
+   "Sele a carne em frigideira de ferro bem quente. Reserve.",
+   "Na mesma frigideira, salteie pimentões e cebola até ficarem macios e tostados.",
+   "Junte a carne, aqueça as tortillas e sirva com os acompanhamentos."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Fraldinha ou alcatra",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Pimentão vermelho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Pimentão amarelo",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Páprica defumada",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 8.0,
+    "unidade": "un",
+    "nome": "Tortillas",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Abacate (para o guacamole)",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Creme azedo",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Queijo ralado",
+    "secao": "Frios e laticínios"
+   }
+  ]
+ },
+ "carne12": {
+  "tempo": "1h30",
+  "porcoes": 4,
+  "ingredientes": [
+   "500 g de massa para lasanha",
+   "500 g de carne moída",
+   "1 cebola",
+   "2 dentes de alho",
+   "700 ml de molho de tomate",
+   "500 ml de leite",
+   "2 colheres (sopa) de manteiga",
+   "2 colheres (sopa) de farinha de trigo",
+   "Noz-moscada",
+   "300 g de muçarela",
+   "50 g de parmesão ralado",
+   "Sal e pimenta"
+  ],
+  "preparo": [
+   "Bolonhesa: refogue cebola e alho, doure a carne, junte o molho de tomate e cozinhe 20 min.",
+   "Bechamel: derreta a manteiga, junte a farinha, mexa 1 min e acrescente o leite aos poucos até engrossar. Tempere com sal e noz-moscada.",
+   "Na travessa, alterne molho, massa, bechamel e muçarela, terminando com molho e bechamel.",
+   "Polvilhe parmesão, cubra com papel-alumínio e asse a 200 °C por 30 min.",
+   "Retire o papel e gratine por mais 15 min. Descanse 10 min antes de cortar."
+  ],
+  "compras": [
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Massa para lasanha",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Carne moída (patinho)",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 700.0,
+    "unidade": "ml",
+    "nome": "Molho de tomate",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "ml",
+    "nome": "Leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Farinha de trigo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Noz-moscada",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Muçarela",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 50.0,
+    "unidade": "g",
+    "nome": "Parmesão ralado",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "carne13": {
+  "tempo": "1h30",
+  "porcoes": 4,
+  "ingredientes": [
+   "8 abobrinhas pequenas (tipo italiana ou libanesa)",
+   "300 g de carne moída",
+   "1/2 xícara de arroz cru lavado",
+   "1 tomate picado",
+   "1 colher (chá) de pimenta síria",
+   "Hortelã seca",
+   "800 ml de molho de tomate",
+   "2 dentes de alho",
+   "Sal e azeite"
+  ],
+  "preparo": [
+   "Corte as pontas e esvazie as abobrinhas com um descaroçador, deixando a casca firme.",
+   "Misture carne, arroz cru, tomate, pimenta síria e sal.",
+   "Recheie as abobrinhas até 3/4 (o arroz cresce).",
+   "Arrume numa panela, cubra com o molho de tomate, alho amassado e hortelã, completando com água até cobrir.",
+   "Cozinhe tampado em fogo baixo por 50 min, até o arroz ficar macio."
+  ],
+  "compras": [
+   {
+    "qtd": 8.0,
+    "unidade": "un",
+    "nome": "Abobrinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Carne moída (patinho)",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "xícara",
+    "nome": "Arroz",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Pimenta síria",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Hortelã seca",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 800.0,
+    "unidade": "ml",
+    "nome": "Molho de tomate",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "carne14": {
+  "tempo": "1h30 + dessalgue",
+  "porcoes": 4,
+  "ingredientes": [
+   "500 g de carne-seca",
+   "1 kg de mandioca",
+   "2 colheres (sopa) de manteiga",
+   "1 xícara de leite",
+   "1 cebola",
+   "3 dentes de alho",
+   "1 tomate",
+   "Cheiro-verde",
+   "200 g de queijo muçarela ou coalho",
+   "Parmesão ralado"
+  ],
+  "preparo": [
+   "Dessalgue a carne-seca de véspera, trocando a água 3 a 4 vezes. Cozinhe na pressão por 40 min e desfie.",
+   "Cozinhe a mandioca até desmanchar, amasse com manteiga e leite e acerte o sal.",
+   "Refogue cebola, alho e tomate, junte a carne desfiada e o cheiro-verde.",
+   "Numa travessa, coloque a carne, cubra com o purê e espalhe os queijos.",
+   "Asse a 200 °C por 20 a 25 min, até gratinar."
+  ],
+  "compras": [
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Carne-seca",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Mandioca",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "xícara",
+    "nome": "Leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cheiro-verde",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "g",
+    "nome": "Muçarela",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Parmesão ralado",
+    "secao": "Frios e laticínios"
+   }
+  ]
+ },
+ "frango0": {
+  "tempo": "1h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 kg de sobrecoxa ou coxa e sobrecoxa",
+   "2 xícaras de arroz",
+   "1 cebola",
+   "3 dentes de alho",
+   "1 colher (chá) de açafrão-da-terra",
+   "1 tomate",
+   "1/2 pimentão",
+   "1 lata de milho (opcional)",
+   "Cheiro-verde",
+   "Suco de 1 limão, sal e óleo"
+  ],
+  "preparo": [
+   "Tempere o frango com limão, alho, sal e açafrão. Deixe 20 min.",
+   "Doure bem o frango em panela grande com óleo.",
+   "Junte cebola, pimentão e tomate e refogue.",
+   "Acrescente o arroz, mexa e cubra com 4 xícaras de água quente. Acerte o sal.",
+   "Cozinhe tampado em fogo baixo até secar (cerca de 20 min). Junte o milho e o cheiro-verde no final."
+  ],
+  "compras": [
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Coxa e sobrecoxa",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "xícara",
+    "nome": "Arroz",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Açafrão-da-terra",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "un",
+    "nome": "Pimentão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "lata",
+    "nome": "Milho em lata",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cheiro-verde",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   }
+  ]
+ },
+ "frango1": {
+  "tempo": "35 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de peito de frango moído",
+   "1 cebola ralada e espremida",
+   "2 dentes de alho",
+   "Salsinha e hortelã picadas",
+   "1 colher (chá) de páprica",
+   "1 colher (chá) de cominho",
+   "Sal",
+   "Espetos de madeira",
+   "Molho de iogurte para servir"
+  ],
+  "preparo": [
+   "Misture o frango com cebola, alho, ervas e temperos.",
+   "Com as mãos úmidas, molde as kaftas nos espetos.",
+   "Leve à geladeira por 15 min para firmar.",
+   "Grelhe em frigideira ou grelha untada, virando, por 10 a 12 min.",
+   "Sirva com molho de iogurte (iogurte, limão, alho e sal)."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Peito de frango moído",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Hortelã",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Páprica doce",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Espetos de madeira",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Iogurte natural",
+    "secao": "Frios e laticínios"
+   }
+  ]
+ },
+ "frango2": {
+  "tempo": "55 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "8 sobrecoxas com pele",
+   "Suco e raspas de 2 limões",
+   "4 dentes de alho",
+   "Alecrim e tomilho",
+   "3 colheres (sopa) de azeite",
+   "Sal e pimenta"
+  ],
+  "preparo": [
+   "Misture limão, raspas, alho amassado, ervas, azeite, sal e pimenta.",
+   "Tempere as sobrecoxas, inclusive sob a pele. Deixe 30 min (ou de véspera).",
+   "Arrume com a pele para cima numa assadeira.",
+   "Asse a 220 °C por 40 a 45 min, até a pele ficar dourada e crocante.",
+   "Regue com o caldo da assadeira antes de servir."
+  ],
+  "compras": [
+   {
+    "qtd": 8.0,
+    "unidade": "un",
+    "nome": "Sobrecoxa",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "frango3": {
+  "tempo": "35 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de peito de frango em filés",
+   "300 g de cogumelos paris",
+   "2 dentes de alho",
+   "1 cebola pequena",
+   "200 ml de creme de leite",
+   "2 colheres (sopa) de manteiga",
+   "Tomilho",
+   "Sal e pimenta"
+  ],
+  "preparo": [
+   "Tempere o frango e sele na manteiga até dourar dos dois lados. Reserve.",
+   "Na mesma panela, doure os cogumelos fatiados.",
+   "Junte cebola e alho e refogue.",
+   "Acrescente o creme de leite e o tomilho e cozinhe 3 min.",
+   "Volte o frango ao molho e cozinhe mais 5 min, até cozinhar por dentro."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Peito de frango",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Cogumelos paris",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Creme de leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "frango4": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 kg de frango a passarinho ou sobrecoxa",
+   "6 dentes de alho",
+   "2 tomates",
+   "Ervas de Provence (ou tomilho, alecrim e orégano)",
+   "100 ml de vinho branco",
+   "Azeite, sal e pimenta",
+   "Salsinha"
+  ],
+  "preparo": [
+   "Tempere o frango com sal, pimenta e ervas.",
+   "Doure o frango em azeite até ficar bem corado.",
+   "Junte o alho fatiado e refogue sem queimar.",
+   "Acrescente o vinho e os tomates em cubos, tampe e cozinhe por 15 min.",
+   "Finalize com salsinha e um fio de azeite."
+  ],
+  "compras": [
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Frango em pedaços pequenos",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 6.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 100.0,
+    "unidade": "ml",
+    "nome": "Vinho branco seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   }
+  ]
+ },
+ "frango5": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de peito ou sobrecoxa em cubos",
+   "1 cebola",
+   "3 dentes de alho",
+   "1 colher (sopa) de gengibre ralado",
+   "2 colheres (sopa) de curry em pó",
+   "200 ml de leite de coco",
+   "1 tomate",
+   "Coentro ou cebolinha",
+   "Sal e óleo"
+  ],
+  "preparo": [
+   "Tempere o frango com sal e 1 colher de curry.",
+   "Doure o frango em óleo. Reserve.",
+   "Refogue cebola, alho e gengibre; junte o resto do curry e mexa 1 min.",
+   "Acrescente o tomate picado, o leite de coco e o frango.",
+   "Cozinhe 15 min em fogo baixo. Finalize com coentro e sirva com arroz."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Peito de frango",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Gengibre",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Curry em pó",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Leite de coco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebolinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Óleo",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "frango6": {
+  "tempo": "30 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de sobrecoxa sem osso",
+   "5 colheres (sopa) de shoyu",
+   "2 colheres (sopa) de mirin ou saquê",
+   "2 colheres (sopa) de açúcar ou mel",
+   "1 colher (chá) de gengibre ralado",
+   "1 colher (chá) de amido de milho",
+   "Gergelim e cebolinha"
+  ],
+  "preparo": [
+   "Misture shoyu, mirin, açúcar, gengibre e 3 colheres de água (molho teriyaki).",
+   "Doure o frango com a pele para baixo em frigideira, até ficar crocante; vire e cozinhe.",
+   "Retire o excesso de gordura da frigideira.",
+   "Despeje o molho com o amido dissolvido e deixe reduzir, envolvendo o frango.",
+   "Fatie e finalize com gergelim e cebolinha."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Sobrecoxa",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 5.0,
+    "unidade": "c. sopa",
+    "nome": "Shoyu",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mirin ou saquê",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mel ou açúcar",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Gengibre",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Amido de milho",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Gergelim",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebolinha",
+    "secao": "Hortifrúti"
+   }
+  ]
+ },
+ "frango7": {
+  "tempo": "40 min + marinada",
+  "porcoes": 4,
+  "ingredientes": [
+   "800 g de peito de frango em cubos",
+   "170 g de iogurte natural",
+   "Suco de 1 limão",
+   "4 dentes de alho",
+   "1 colher (sopa) de páprica",
+   "1 colher (chá) de cominho",
+   "2 colheres (sopa) de azeite",
+   "Sal",
+   "Espetos",
+   "Toum ou molho de alho para servir"
+  ],
+  "preparo": [
+   "Misture iogurte, limão, alho, especiarias, azeite e sal.",
+   "Marine o frango por pelo menos 2h (ideal: de véspera).",
+   "Monte os espetos.",
+   "Grelhe em grelha ou forno bem quente, virando, por 12 a 15 min.",
+   "Sirva com molho de alho e salada."
+  ],
+  "compras": [
+   {
+    "qtd": 800.0,
+    "unidade": "g",
+    "nome": "Peito de frango",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 170.0,
+    "unidade": "g",
+    "nome": "Iogurte natural",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Páprica doce",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Espetos de madeira",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alho (para o molho)",
+    "secao": "Hortifrúti"
+   }
+  ]
+ },
+ "frango8": {
+  "tempo": "45 min + marinada",
+  "porcoes": 4,
+  "ingredientes": [
+   "800 g de sobrecoxa sem osso",
+   "Suco de 1 limão",
+   "3 colheres (sopa) de iogurte",
+   "4 dentes de alho",
+   "1 colher (sopa) de shawarma em pó (ou cominho, páprica, canela e cardamomo)",
+   "Sal e azeite",
+   "Pão sírio",
+   "Alface, tomate, cebola roxa e molho de tahine"
+  ],
+  "preparo": [
+   "Misture limão, iogurte, alho, temperos, sal e azeite. Marine o frango por 2h.",
+   "Asse em assadeira a 220 °C por 30 min, até dourar.",
+   "Fatie o frango bem fino e volte à assadeira quente por 5 min para tostar.",
+   "Aqueça os pães.",
+   "Monte com os vegetais e o molho de tahine."
+  ],
+  "compras": [
+   {
+    "qtd": 800.0,
+    "unidade": "g",
+    "nome": "Sobrecoxa",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Iogurte natural",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pão sírio",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alface",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebola roxa",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Molho de tahine",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "frango9": {
+  "tempo": "1h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 kg de coxa e sobrecoxa",
+   "1 cebola",
+   "1 cenoura",
+   "1 pimentão",
+   "3 dentes de alho",
+   "150 ml de vinho tinto",
+   "1 lata de tomate pelado",
+   "Azeitonas pretas",
+   "Alecrim e orégano",
+   "Sal, pimenta e azeite"
+  ],
+  "preparo": [
+   "Tempere e doure o frango em azeite. Reserve.",
+   "Refogue cebola, cenoura e pimentão em tiras e o alho.",
+   "Junte o vinho e deixe reduzir.",
+   "Acrescente o tomate, ervas e o frango. Tampe e cozinhe 35 min em fogo baixo.",
+   "Junte as azeitonas no final."
+  ],
+  "compras": [
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Coxa e sobrecoxa",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cenoura",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Pimentão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 150.0,
+    "unidade": "ml",
+    "nome": "Vinho tinto seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "lata",
+    "nome": "Tomate pelado",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeitonas pretas",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Orégano",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "frango10": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 kg de frango em pedaços pequenos (coxinha da asa ou sobrecoxa)",
+   "1 cabeça de alho",
+   "100 ml de vinho branco",
+   "1 folha de louro",
+   "Salsinha",
+   "Azeite, sal e pimenta"
+  ],
+  "preparo": [
+   "Tempere o frango com sal e pimenta.",
+   "Em bastante azeite, doure o frango lentamente até ficar bem corado. Reserve.",
+   "No mesmo azeite, doure os dentes de alho levemente amassados, sem queimar.",
+   "Volte o frango, junte vinho e louro, tampe e cozinhe 15 min.",
+   "Destampe para reduzir o molho e finalize com salsinha."
+  ],
+  "compras": [
+   {
+    "qtd": 1000.0,
+    "unidade": "g",
+    "nome": "Frango em pedaços pequenos",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "cabeça",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 100.0,
+    "unidade": "ml",
+    "nome": "Vinho branco seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "folha",
+    "nome": "Louro",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "frango11": {
+  "tempo": "40 min + marinada",
+  "porcoes": 4,
+  "ingredientes": [
+   "700 g de sobrecoxa sem osso em pedaços",
+   "3 colheres (sopa) de shoyu",
+   "1 colher (sopa) de saquê ou mirin",
+   "1 colher (sopa) de gengibre ralado",
+   "2 dentes de alho",
+   "1/2 xícara de amido de batata ou de milho",
+   "Óleo para fritar",
+   "Limão e maionese japonesa"
+  ],
+  "preparo": [
+   "Marine o frango em shoyu, saquê, gengibre e alho por 30 min.",
+   "Escorra e passe os pedaços no amido.",
+   "Frite em óleo a 160 °C por 4 min. Retire e descanse 3 min.",
+   "Frite de novo a 180 °C por 1 a 2 min, até ficar bem crocante.",
+   "Sirva com limão e maionese."
+  ],
+  "compras": [
+   {
+    "qtd": 700.0,
+    "unidade": "g",
+    "nome": "Sobrecoxa",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Shoyu",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Mirin ou saquê",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Gengibre",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "xícara",
+    "nome": "Amido de milho",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Óleo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Maionese japonesa",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "frango12": {
+  "tempo": "1h40",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 frango inteiro (cerca de 1,8 kg)",
+   "4 colheres (sopa) de manteiga em temperatura ambiente",
+   "1 cabeça de alho",
+   "1 limão",
+   "Alecrim e tomilho",
+   "Sal e pimenta",
+   "Batatas e cebolas para assar junto (opcional)"
+  ],
+  "preparo": [
+   "Seque o frango. Misture manteiga, alho amassado, ervas, sal e pimenta.",
+   "Espalhe a manteiga sob e sobre a pele. Coloque o limão cortado dentro da cavidade.",
+   "Amarre as coxas e arrume na assadeira com batatas e cebolas em volta.",
+   "Asse a 200 °C por 1h15 a 1h30, regando com o caldo a cada 20 min.",
+   "Está pronto quando o líquido da coxa sair transparente. Descanse 10 min antes de cortar."
+  ],
+  "compras": [
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Frango inteiro",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "cabeça",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "frango13": {
+  "tempo": "1h20",
+  "porcoes": 4,
+  "ingredientes": [
+   "500 g de massa para lasanha",
+   "600 g de peito de frango cozido e desfiado",
+   "1 xícara de pesto de manjericão",
+   "Bechamel: 500 ml de leite, 2 colheres (sopa) de manteiga e 2 de farinha",
+   "300 g de muçarela",
+   "50 g de parmesão",
+   "Sal e noz-moscada"
+  ],
+  "preparo": [
+   "Prepare o bechamel e tempere com sal e noz-moscada.",
+   "Misture o frango desfiado com o pesto e metade do bechamel.",
+   "Na travessa, alterne bechamel, massa, frango e muçarela.",
+   "Termine com bechamel e parmesão.",
+   "Asse coberto a 200 °C por 30 min e descoberto por 15 min, até gratinar."
+  ],
+  "compras": [
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Massa para lasanha",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Peito de frango",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "xícara",
+    "nome": "Pesto de manjericão",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "ml",
+    "nome": "Leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Farinha de trigo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Muçarela",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 50.0,
+    "unidade": "g",
+    "nome": "Parmesão ralado",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Noz-moscada",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "frango14": {
+  "tempo": "1h20",
+  "porcoes": 4,
+  "ingredientes": [
+   "500 g de massa para lasanha",
+   "600 g de peito de frango cozido e desfiado",
+   "300 g de cogumelos paris fatiados",
+   "1 cebola",
+   "2 dentes de alho",
+   "Bechamel: 600 ml de leite, 3 colheres (sopa) de manteiga e 3 de farinha",
+   "300 g de muçarela",
+   "50 g de parmesão",
+   "Sal e noz-moscada"
+  ],
+  "preparo": [
+   "Doure os cogumelos na manteiga, junte cebola e alho e refogue.",
+   "Prepare o bechamel e misture metade dele com o frango e os cogumelos.",
+   "Na travessa, alterne bechamel, massa, recheio e muçarela.",
+   "Termine com bechamel e parmesão.",
+   "Asse coberto a 200 °C por 30 min e descoberto por 15 min."
+  ],
+  "compras": [
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Massa para lasanha",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Peito de frango",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Cogumelos paris",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 600.0,
+    "unidade": "ml",
+    "nome": "Leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Farinha de trigo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Muçarela",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 50.0,
+    "unidade": "g",
+    "nome": "Parmesão ralado",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Noz-moscada",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "peixe0": {
+  "tempo": "25 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 postas ou filés de salmão com pele",
+   "3 colheres (sopa) de manteiga",
+   "Salsinha, cebolinha e endro picados",
+   "1 dente de alho",
+   "Raspas de 1 limão",
+   "Sal, pimenta e azeite"
+  ],
+  "preparo": [
+   "Misture a manteiga com ervas, alho, raspas de limão e uma pitada de sal. Leve à geladeira.",
+   "Seque o salmão e tempere com sal e pimenta.",
+   "Em frigideira quente com azeite, coloque o salmão com a pele para baixo e deixe 4 a 5 min sem mexer.",
+   "Vire e cozinhe mais 2 a 3 min.",
+   "Sirva com uma colherada da manteiga de ervas por cima."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Salmão",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebolinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Endro",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "peixe1": {
+  "tempo": "25 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 filés de peixe branco (pescada, linguado ou tilápia)",
+   "Farinha de trigo para empanar",
+   "3 colheres (sopa) de manteiga",
+   "2 colheres (sopa) de alcaparras",
+   "Suco de 1 limão",
+   "Salsinha",
+   "Sal e pimenta"
+  ],
+  "preparo": [
+   "Tempere os filés com sal e pimenta e passe levemente na farinha.",
+   "Doure em frigideira com um pouco de manteiga, 2 a 3 min de cada lado. Reserve.",
+   "Na mesma frigideira, derreta o restante da manteiga até dourar levemente.",
+   "Junte as alcaparras e o limão.",
+   "Regue os filés com o molho e finalize com salsinha."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Filé de peixe branco",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Farinha de trigo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Alcaparras",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "peixe2": {
+  "tempo": "30 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "600 g de camarão médio limpo",
+   "1 cebola",
+   "3 dentes de alho",
+   "1 colher (sopa) de gengibre ralado",
+   "2 colheres (sopa) de curry em pó",
+   "200 ml de leite de coco",
+   "1 tomate",
+   "Coentro, sal e óleo",
+   "Suco de 1/2 limão"
+  ],
+  "preparo": [
+   "Tempere o camarão com sal e limão.",
+   "Refogue cebola, alho e gengibre; junte o curry e mexa 1 min.",
+   "Acrescente o tomate picado e o leite de coco e cozinhe 5 min.",
+   "Junte o camarão e cozinhe só até ficar rosado (3 a 4 min).",
+   "Finalize com coentro e sirva com arroz."
+  ],
+  "compras": [
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Camarão limpo",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Gengibre",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Curry em pó",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Leite de coco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Coentro",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Óleo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   }
+  ]
+ },
+ "peixe3": {
+  "tempo": "1h",
+  "porcoes": 4,
+  "ingredientes": [
+   "800 g de filé de peixe branco firme (namorado, cação ou pescada)",
+   "3 cebolas",
+   "2 xícaras de arroz",
+   "1 colher (chá) de cominho",
+   "1 colher (chá) de pimenta síria",
+   "1/2 colher (chá) de canela",
+   "Óleo, sal e limão",
+   "Amêndoas ou pinoles tostados"
+  ],
+  "preparo": [
+   "Fatie as cebolas e frite em óleo até ficarem bem escuras e caramelizadas. Reserve metade.",
+   "Bata a outra metade com 5 xícaras de água quente para fazer um caldo escuro.",
+   "Tempere o peixe com sal e especiarias e doure rapidamente. Reserve.",
+   "Refogue o arroz com as especiarias, cubra com o caldo de cebola e cozinhe até quase secar.",
+   "Arrume o peixe por cima do arroz, tampe e cozinhe mais 10 min. Sirva com a cebola reservada, castanhas e limão."
+  ],
+  "compras": [
+   {
+    "qtd": 800.0,
+    "unidade": "g",
+    "nome": "Filé de peixe branco",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "xícara",
+    "nome": "Arroz",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Pimenta síria",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "c. chá",
+    "nome": "Canela em pó",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Óleo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Amêndoas ou pinoles",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "peixe4": {
+  "tempo": "20 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "600 g de camarão médio ou grande limpo",
+   "8 dentes de alho fatiados",
+   "1 pimenta dedo-de-moça",
+   "150 ml de azeite",
+   "Salsinha",
+   "Sal",
+   "Pão para servir"
+  ],
+  "preparo": [
+   "Seque bem os camarões e tempere com sal.",
+   "Aqueça o azeite em fogo médio-baixo com o alho e a pimenta até o alho começar a dourar.",
+   "Aumente o fogo e junte os camarões.",
+   "Cozinhe 2 a 3 min, só até ficarem rosados.",
+   "Finalize com salsinha e sirva com pão para molhar no azeite."
+  ],
+  "compras": [
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Camarão limpo",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 8.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Pimenta dedo-de-moça",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 150.0,
+    "unidade": "ml",
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pão",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "peixe5": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 filés de peixe branco",
+   "1 abobrinha",
+   "1 cenoura",
+   "1 tomate",
+   "1/2 cebola roxa",
+   "1 limão em rodelas",
+   "Ervas frescas (tomilho, endro ou salsinha)",
+   "Azeite, sal e pimenta",
+   "Papel-manteiga ou papel-alumínio"
+  ],
+  "preparo": [
+   "Corte os legumes em tiras finas ou rodelas.",
+   "Corte 4 quadrados grandes de papel. Em cada um, coloque legumes, o peixe temperado, limão e ervas.",
+   "Regue com azeite e feche bem os pacotes, dobrando as bordas.",
+   "Asse a 200 °C por 18 a 20 min.",
+   "Sirva abrindo o pacote na mesa."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Filé de peixe branco",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Abobrinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cenoura",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "un",
+    "nome": "Cebola roxa",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   }
+  ]
+ },
+ "peixe6": {
+  "tempo": "30 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 filés de salmão",
+   "Polpa de 3 maracujás",
+   "2 colheres (sopa) de mel ou açúcar",
+   "1 colher (sopa) de manteiga",
+   "Sal, pimenta e azeite"
+  ],
+  "preparo": [
+   "Tempere o salmão com sal e pimenta.",
+   "Sele em frigideira com azeite, pele para baixo, 4 min; vire e cozinhe mais 2 min. Reserve.",
+   "Na mesma frigideira, coloque a polpa de maracujá e o mel.",
+   "Cozinhe até reduzir e engrossar levemente. Desligue e junte a manteiga.",
+   "Sirva o salmão com o molho por cima."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Salmão",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "un",
+    "nome": "Maracujá",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mel ou açúcar",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "peixe7": {
+  "tempo": "1h + dessalgue",
+  "porcoes": 4,
+  "ingredientes": [
+   "600 g de bacalhau dessalgado e desfiado",
+   "800 g de batatas",
+   "2 cebolas",
+   "3 dentes de alho",
+   "Azeite",
+   "Bechamel: 500 ml de leite, 2 colheres (sopa) de manteiga e 2 de farinha",
+   "200 ml de creme de leite",
+   "Parmesão ralado",
+   "Noz-moscada, sal e pimenta"
+  ],
+  "preparo": [
+   "Corte as batatas em cubos pequenos e frite ou asse até dourar.",
+   "Refogue as cebolas fatiadas e o alho em azeite e junte o bacalhau desfiado.",
+   "Prepare o bechamel e misture o creme de leite.",
+   "Junte batatas, bacalhau e metade do molho; coloque numa travessa e cubra com o restante.",
+   "Polvilhe parmesão e gratine a 200 °C por 20 a 25 min."
+  ],
+  "compras": [
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Bacalhau dessalgado",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 800.0,
+    "unidade": "g",
+    "nome": "Batata",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "ml",
+    "nome": "Leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Farinha de trigo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Creme de leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Parmesão ralado",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Noz-moscada",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "peixe8": {
+  "tempo": "20 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 filés de peixe branco (tilápia, pescada ou saint peter)",
+   "Suco de 1 limão",
+   "2 dentes de alho",
+   "Páprica doce",
+   "Azeite, sal e pimenta",
+   "Salsinha"
+  ],
+  "preparo": [
+   "Tempere os filés com limão, alho, páprica, sal e pimenta. Deixe 10 min.",
+   "Seque levemente com papel-toalha.",
+   "Grelhe em frigideira antiaderente bem quente com azeite, 3 min de cada lado.",
+   "Vire só uma vez para não quebrar.",
+   "Finalize com salsinha e um fio de azeite."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Filé de peixe branco",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Páprica doce",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   }
+  ]
+ },
+ "peixe9": {
+  "tempo": "40 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 filés de peixe branco",
+   "300 g de camarão pequeno limpo",
+   "1 cebola",
+   "2 dentes de alho",
+   "3 tomates sem pele",
+   "1 colher (sopa) de extrato de tomate",
+   "100 ml de creme de leite (opcional)",
+   "Cheiro-verde",
+   "Limão, sal e azeite"
+  ],
+  "preparo": [
+   "Tempere peixe e camarões com limão e sal.",
+   "Grelhe ou asse os filés até dourar. Reserve.",
+   "Refogue cebola e alho, junte tomates picados e extrato e cozinhe 10 min.",
+   "Acrescente os camarões e cozinhe 3 min; junte o creme de leite se quiser.",
+   "Cubra os filés com o molho e finalize com cheiro-verde."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Filé de peixe branco",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 300.0,
+    "unidade": "g",
+    "nome": "Camarão limpo",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Extrato de tomate",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 100.0,
+    "unidade": "ml",
+    "nome": "Creme de leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cheiro-verde",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "peixe10": {
+  "tempo": "1h",
+  "porcoes": 4,
+  "ingredientes": [
+   "600 g de camarão médio limpo",
+   "500 g de mandioca",
+   "200 ml de leite de coco",
+   "2 colheres (sopa) de azeite de dendê",
+   "1 cebola",
+   "3 dentes de alho",
+   "2 tomates",
+   "1/2 pimentão",
+   "Coentro, limão e sal"
+  ],
+  "preparo": [
+   "Cozinhe a mandioca até ficar bem macia e bata no liquidificador com parte da água do cozimento e o leite de coco.",
+   "Tempere o camarão com sal e limão e salteie rapidamente em um pouco de azeite. Reserve.",
+   "Refogue cebola, alho, tomate e pimentão.",
+   "Junte o creme de mandioca e o dendê e cozinhe 5 min.",
+   "Acrescente os camarões e o coentro e sirva com arroz branco."
+  ],
+  "compras": [
+   {
+    "qtd": 600.0,
+    "unidade": "g",
+    "nome": "Camarão limpo",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 500.0,
+    "unidade": "g",
+    "nome": "Mandioca",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 200.0,
+    "unidade": "ml",
+    "nome": "Leite de coco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Azeite de dendê",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Tomate",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "un",
+    "nome": "Pimentão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Coentro",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "peixe11": {
+  "tempo": "35 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "4 filés de peixe branco grosso (pescada amarela, merluza ou bacalhau fresco)",
+   "1 xícara de farinha panko ou de rosca",
+   "Salsinha, cebolinha e tomilho picados",
+   "2 dentes de alho",
+   "Raspas de 1 limão",
+   "3 colheres (sopa) de azeite ou manteiga derretida",
+   "1 colher (sopa) de mostarda",
+   "Sal e pimenta"
+  ],
+  "preparo": [
+   "Misture panko, ervas, alho, raspas de limão, azeite e uma pitada de sal.",
+   "Tempere os filés com sal e pimenta e coloque numa assadeira untada.",
+   "Pincele a mostarda por cima dos filés.",
+   "Cubra com a farofa de ervas, apertando para aderir.",
+   "Asse a 200 °C por 15 a 20 min, até a crosta dourar."
+  ],
+  "compras": [
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Filé de peixe branco",
+    "secao": "Peixaria"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "xícara",
+    "nome": "Farinha panko ou de rosca",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Salsinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebolinha",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Manteiga",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Mostarda",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "suina0": {
+  "tempo": "1h30 + marinada",
+  "porcoes": 4,
+  "ingredientes": [
+   "1,2 kg de lombo suíno",
+   "Suco de 4 laranjas",
+   "Raspas de 1 laranja",
+   "4 dentes de alho",
+   "2 colheres (sopa) de mel",
+   "1 colher (sopa) de shoyu",
+   "1 colher (chá) de amido de milho",
+   "Alecrim, sal e pimenta"
+  ],
+  "preparo": [
+   "Tempere o lombo com alho, sal, pimenta, alecrim e metade do suco de laranja. Marine 2h ou de véspera.",
+   "Asse coberto com papel-alumínio a 200 °C por 50 min.",
+   "Retire o papel e asse mais 20 min, regando com o caldo, até dourar.",
+   "Molho: ferva o restante do suco, as raspas, mel, shoyu e o caldo da assadeira; engrosse com o amido dissolvido.",
+   "Fatie e sirva com o molho."
+  ],
+  "compras": [
+   {
+    "qtd": 1200.0,
+    "unidade": "g",
+    "nome": "Lombo suíno",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "un",
+    "nome": "Laranja",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Laranja",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mel",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. sopa",
+    "nome": "Shoyu",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Amido de milho",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "suina1": {
+  "tempo": "35 min",
+  "porcoes": 4,
+  "ingredientes": [
+   "800 g de filé mignon suíno",
+   "2 colheres (sopa) de mostarda",
+   "2 colheres (sopa) de mel",
+   "100 ml de creme de leite (opcional)",
+   "2 dentes de alho",
+   "Tomilho",
+   "Sal, pimenta e azeite"
+  ],
+  "preparo": [
+   "Corte o filé em medalhões de 3 cm e tempere com alho, sal e pimenta.",
+   "Sele em frigideira quente com azeite, 3 a 4 min de cada lado. Reserve.",
+   "Na mesma frigideira, junte mostarda, mel, tomilho e 1/2 xícara de água.",
+   "Cozinhe até engrossar; adicione o creme de leite se quiser mais cremoso.",
+   "Volte os medalhões ao molho por 2 min e sirva."
+  ],
+  "compras": [
+   {
+    "qtd": 800.0,
+    "unidade": "g",
+    "nome": "Filé mignon suíno",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mostarda",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Mel",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 100.0,
+    "unidade": "ml",
+    "nome": "Creme de leite",
+    "secao": "Frios e laticínios"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "suina2": {
+  "tempo": "4h + marinada",
+  "porcoes": 4,
+  "ingredientes": [
+   "1 pernil suíno (cerca de 2 kg)",
+   "1 cabeça de alho",
+   "Suco de 2 limões",
+   "1 xícara de vinho branco",
+   "Alecrim, tomilho e louro",
+   "2 cebolas",
+   "Sal e pimenta",
+   "Azeite"
+  ],
+  "preparo": [
+   "Fure o pernil com uma faca e tempere com alho amassado, limão, vinho, ervas, sal e pimenta. Marine de véspera.",
+   "Coloque numa assadeira com as cebolas e a marinada, cubra com papel-alumínio.",
+   "Asse a 180 °C por 3h, regando de vez em quando.",
+   "Retire o papel, aumente para 220 °C e asse mais 30 a 40 min, até formar crosta dourada.",
+   "Descanse 15 min antes de fatiar."
+  ],
+  "compras": [
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Pernil suíno",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "cabeça",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "xícara",
+    "nome": "Vinho branco seco",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Alecrim",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tomilho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Louro",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Azeite",
+    "secao": "Mercearia"
+   }
+  ]
+ },
+ "suina3": {
+  "tempo": "2h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1,5 kg de costelinha suína em ripas",
+   "1/2 xícara de ketchup",
+   "3 colheres (sopa) de mel ou açúcar mascavo",
+   "3 colheres (sopa) de shoyu",
+   "2 colheres (sopa) de vinagre",
+   "3 dentes de alho",
+   "1 colher (chá) de páprica defumada",
+   "Sal e pimenta"
+  ],
+  "preparo": [
+   "Tempere a costelinha com sal, pimenta, alho e páprica.",
+   "Embrulhe em papel-alumínio e asse a 180 °C por 1h30, até ficar macia.",
+   "Misture ketchup, mel, shoyu e vinagre para o molho agridoce.",
+   "Abra o papel, pincele o molho generosamente.",
+   "Aumente o forno para 220 °C e asse mais 20 min, pincelando de novo, até caramelizar."
+  ],
+  "compras": [
+   {
+    "qtd": 1500.0,
+    "unidade": "g",
+    "nome": "Costelinha suína",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 0.5,
+    "unidade": "xícara",
+    "nome": "Ketchup",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Açúcar mascavo",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "c. sopa",
+    "nome": "Shoyu",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "c. sopa",
+    "nome": "Vinagre",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": 3.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Páprica defumada",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   }
+  ]
+ },
+ "suina4": {
+  "tempo": "3h",
+  "porcoes": 4,
+  "ingredientes": [
+   "1,2 kg de paleta ou copa-lombo suína em cubos grandes",
+   "Suco de 2 laranjas",
+   "Suco de 2 limões",
+   "1 cebola",
+   "4 dentes de alho",
+   "1 colher (chá) de cominho",
+   "1 colher (chá) de orégano",
+   "1 folha de louro",
+   "Sal e pimenta",
+   "Tortillas, cebola roxa, coentro e limão para servir"
+  ],
+  "preparo": [
+   "Coloque a carne numa panela com os sucos, cebola, alho, especiarias, louro, sal e água só até cobrir.",
+   "Cozinhe em fogo baixo por 2h (ou 45 min na pressão), até desmanchar.",
+   "Retire a carne, desfie grosseiramente e reduza o caldo.",
+   "Espalhe a carne numa assadeira, regue com um pouco do caldo e leve ao forno a 230 °C por 15 a 20 min, até as bordas ficarem crocantes.",
+   "Sirva nas tortillas com cebola roxa, coentro e limão."
+  ],
+  "compras": [
+   {
+    "qtd": 1200.0,
+    "unidade": "g",
+    "nome": "Paleta ou copa-lombo suína",
+    "secao": "Açougue"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Laranja",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 2.0,
+    "unidade": "un",
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "un",
+    "nome": "Cebola",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 4.0,
+    "unidade": "dente",
+    "nome": "Alho",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Cominho",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "c. chá",
+    "nome": "Orégano",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": 1.0,
+    "unidade": "folha",
+    "nome": "Louro",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Sal",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Pimenta-do-reino",
+    "secao": "Temperos"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Tortillas",
+    "secao": "Mercearia"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Cebola roxa",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Coentro",
+    "secao": "Hortifrúti"
+   },
+   {
+    "qtd": null,
+    "unidade": null,
+    "nome": "Limão",
+    "secao": "Hortifrúti"
+   }
+  ]
+ }
+}
