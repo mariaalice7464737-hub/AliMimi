@@ -2,8 +2,9 @@ import { useState } from "react";
 import { Navigate, useNavigate, useSearchParams } from "react-router-dom";
 import { familiaSalva, lembrarFamilia, useCardapio } from "../estado";
 import { api } from "../lib/api";
+import { Ramo } from "../componentes/Ilustracoes";
 
-const FOTOS = ["carne0", "frango12", "peixe0", "carne12", "suina4", "peixe10"];
+const FOTOS = ["carne0", "frango12", "peixe0", "carne12", "suina4"]; // 1 grande + 4 pequenas
 
 /** Só aparece na primeira vez: quem já tem família salva vai direto para o Cardápio */
 export default function Inicio() {
@@ -36,24 +37,26 @@ export default function Inicio() {
   }
 
   return (
-    <div className="app">
-      <header><div className="top"><h1>Almoço da semana</h1></div></header>
+    <div className="app com-barra">
+      <header className="topo"><div className="topo-linha"><span className="marca">Almoço <em>da</em> Semana<Ramo /></span></div></header>
       <main><div className="view">
-        <div className="hero">{FOTOS.filter((id) => pratos[id]).map((id) => <img key={id} src={pratos[id].img} alt="" />)}</div>
-        <h2>Monte o almoço da semana</h2>
-        <p className="lead">Escolha um prato para cada dia (ou pule o dia) e receba a receita e a lista de compras prontas. Toda a família vê a mesma semana.</p>
+        <div className="capa-fotos">{FOTOS.filter((id) => pratos[id]).map((id) => <img key={id} src={pratos[id].img} alt="" />)}</div>
+        <p className="sobrelinha">Nossa mesa, nossa semana</p>
+        <h1 className="titulo">Monte o almoço <em>da semana</em></h1>
+        <p className="apoio">Escolha um prato para cada dia (ou pule o dia) e receba a receita e a lista de compras prontas. Toda a família vê a mesma semana.</p>
         <form onSubmit={entrar}>
-          <span className="ou">Alguém da família já começou? Digite o código:</span>
+          <label className="rotulo" htmlFor="codigo-familia">Alguém da família já começou? Digite o código:</label>
           <div className="campo">
-            <input value={codigo} onChange={(e) => setCodigo(e.target.value)} maxLength={8} placeholder="EX.: K7QM2P"
-              autoCapitalize="characters" autoComplete="off" aria-label="Código da família" />
-            <button className="ghost" disabled={ocupado}>Entrar</button>
+            <input id="codigo-familia" value={codigo} onChange={(e) => setCodigo(e.target.value)} maxLength={8} placeholder="EX.: K7QM2P"
+              autoCapitalize="characters" autoComplete="off" />
+            <button className="botao contorno" disabled={ocupado}>Entrar</button>
           </div>
         </form>
-        {erro && <p className="erro">{erro}</p>}
+        {erro && <p className="erro" role="alert">{erro}</p>}
+        <Ramo className="divisor-ramo" />
       </div></main>
       <div className="bar"><div className="in">
-        <button className="cta" onClick={comecar} disabled={ocupado}>Começar uma semana nova</button>
+        <button className="botao principal" onClick={comecar} disabled={ocupado}>Começar uma semana nova</button>
       </div></div>
     </div>
   );

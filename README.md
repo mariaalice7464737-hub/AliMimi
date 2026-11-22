@@ -61,8 +61,8 @@ O Render gratuito apaga os arquivos do servidor sempre que ele reinicia ou "dorm
 
 **1. Banco no Neon** (uns 2 minutos)
 1. Crie uma conta em https://neon.com (dá para entrar com o GitHub).
-2. Crie um projeto chamado `alimimi`, com a região mais perto (ex.: São Paulo, se aparecer; senão, `US East`).
-3. Na tela do projeto, clique em **Connect** e copie a *connection string*. Ela começa com `postgresql://` e termina com `?sslmode=require`.
+2. Crie um projeto chamado `alimimi` na região **AWS US West 2 (Oregon)**, a mesma do Render (`region: oregon` no `render.yaml`). O Render não tem servidor no Brasil e não deixa mudar a região depois; banco longe do servidor deixa cada requisição lenta.
+3. Na tela do projeto, clique em **Connect**, **desligue o Connection pooling** (o back já tem pool próprio) e copie a *connection string* (`postgresql://…?sslmode=require`).
 
 **2. App no Render**
 1. Crie uma conta em https://render.com (dá para entrar com o GitHub).
@@ -106,4 +106,5 @@ No GitHub, o Actions (`.github/workflows/testes.yml`) roda os testes do back no 
 - **Categoria "Massas", ordem e capas:** topo de `backend/app/cardapio.py`.
 - **Telas:** `frontend/src/telas/` (Inicio, Cardapio, Categorias, Pratos, Receita).
 - **Lista somada e PDFs:** `frontend/src/lib/lista.js` e `frontend/src/lib/pdf.js`.
-- **Cores e estilos:** `frontend/src/estilo.css`.
+- **Cores, tipografia e espaçamentos:** tokens no topo de `frontend/src/estilo.css`.
+- **Ilustrações e ícones (SVG):** `frontend/src/componentes/Ilustracoes.jsx`.

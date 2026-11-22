@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate, useLocation, useParams } from "react-router-dom";
 import Tela from "../componentes/Tela";
+import { IcCheck, IcLista, IcRelogio } from "../componentes/Ilustracoes";
 import { useCardapio, useSemana } from "../estado";
 import { DIAS, SEMANA, pratoDoDia, proximoAberto } from "../lib/dias";
 import { useIr } from "../navegar";
@@ -30,27 +31,34 @@ export default function Pratos() {
 
   return (
     <Tela dia={d} noFluxo={!editando} voltarPara={`${ir.base}/dia/${d}`}
-      rodape={<button className="cta" disabled={!sel} onClick={confirmar}>{rotulo}</button>}>
-      <p className="kick">{DIAS[d]} · {categoria.nome}</p>
-      <h2>Escolha o prato</h2>
-      <div className="list">
+      rodape={<button className="botao principal" disabled={!sel} onClick={confirmar}>{rotulo}</button>}>
+      <p className="sobrelinha">{DIAS[d]} · {categoria.nome}</p>
+      <h1 className="titulo">Escolha <em>o prato</em></h1>
+      <p className="sub">Toque na foto para ver os ingredientes antes de confirmar.</p>
+      <ul className="pratos">
         {categoria.pratos.map((id) => {
           const p = pratos[id], r = receitas[id], u = usadoEm(id), on = sel === id;
           return (
-            <button key={id} className={`dish ${on ? "sel" : ""}`} aria-pressed={on}
-              onClick={(e) => { setSel(id); e.currentTarget.scrollIntoView({ block: "nearest", behavior: "smooth" }); }}>
-              <img src={p.img} alt="" loading="lazy" />
-              <div>
-                <b>{p.nome}</b>
-                <span>{p.descricao}</span>
-                {r && <small className="dm">{r.tempo} · {r.ingredientes.length} ingredientes</small>}
-                {u.length > 0 && <em>Já na {u.join(", ")}</em>}
-              </div>
-              {r && <span className="peek"><b>Vai precisar de</b>{r.ingredientes.join(" · ")}</span>}
-            </button>
+            <li key={id}>
+              <button className={`prato ${on ? "sel" : ""}`} aria-pressed={on}
+                onClick={(e) => { setSel(id); e.currentTarget.scrollIntoView({ block: "nearest", behavior: "smooth" }); }}>
+                <img src={p.img} alt="" loading="lazy" />
+                <span>
+                  <span className="prato-nome">{p.nome}</span>
+                  <span className="prato-desc">{p.descricao}</span>
+                  <span className="meta">
+                    {r && <span><IcRelogio />{r.tempo}</span>}
+                    {r && <span><IcLista />{r.ingredientes.length} ingredientes</span>}
+                    {u.length > 0 && <span className="ja-escolhido">Já na {u.join(", ")}</span>}
+                    <span className="selo"><IcCheck />Escolhido</span>
+                  </span>
+                </span>
+                {r && <span className="previa"><b>Vai precisar de</b>{r.ingredientes.join(" · ")}</span>}
+              </button>
+            </li>
           );
         })}
-      </div>
+      </ul>
     </Tela>
   );
 }

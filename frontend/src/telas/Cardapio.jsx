@@ -1,15 +1,13 @@
 import { useState } from "react";
 import { useLocation, useNavigate, useSearchParams } from "react-router-dom";
 import Tela from "../componentes/Tela";
+import { IcBaixar, IcCarrinho, IcCopiar, IcLista, IcLivro, MesaPosta, Ramo } from "../componentes/Ilustracoes";
 import { useAviso, useCardapio, useSemana } from "../estado";
 import { DIAS, SEMANA, escolhidos, proximoAberto } from "../lib/dias";
 import { copiar } from "../lib/copiar";
 import { listaComoTexto, listaDaSemana } from "../lib/lista";
 import { pdfCardapio, pdfLista, salvarArquivo } from "../lib/pdf";
 import { useIr } from "../navegar";
-
-const IcCarrinho = () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M3 4h2l2.4 11.2a1 1 0 0 0 1 .8h9.2a1 1 0 0 0 1-.8L20 8H6.2" /><circle cx="9" cy="20" r="1.3" /><circle cx="17" cy="20" r="1.3" /></svg>;
-const IcLivro = () => <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M4 5a2 2 0 0 1 2-2h12v16H6a2 2 0 0 0-2 2z" /><path d="M4 21V5M8 7h6M8 11h6" /></svg>;
 
 export default function Cardapio() {
   const cardapio = useCardapio();
@@ -23,6 +21,7 @@ export default function Cardapio() {
 
   const dias = escolhidos(sem), n = dias.length;
   const decididos = SEMANA.filter((i) => sem.dias[i]), abertos = SEMANA.filter((i) => !sem.dias[i]);
+  const comecar = () => ir.categorias(Math.max(0, proximoAberto(sem)));
 
   /* janela "Baixar" vira uma entrada no histórico: o voltar do celular fecha a janela */
   const janelaAberta = params.has("baixar");
@@ -42,39 +41,89 @@ export default function Cardapio() {
     copiar(`${texto}\n${url}`, "Link copiado", avisar);
   }
 
+  const copiarSemana = () =>
+    copiar(listaComoTexto(listaDaSemana(dias.map((i) => sem.dias[i].prato_id), receitas)), "Lista da semana copiada", avisar);
+
   return (
     <Tela dia={null} voltarPara={false}
-      rodape={n
-        ? <><button className="ghost" onClick={recomecar}>Recomeçar</button><button className="cta" onClick={abrirJanela}>Baixar</button></>
-        : <button className="cta" onClick={() => ir.categorias(Math.max(0, proximoAberto(sem)))}>Montar a semana</button>}>
-      <p className="kick">{n ? `${n} ${n === 1 ? "almoço na semana" : "almoços na semana"}` : "Nenhum prato ainda"}</p>
-      <h2>Seu cardápio</h2>
+      rodape={n > 0 && <>
+        <button className="botao contorno" onClick={recomecar}>Recomeçar</button>
+        <button className="botao principal" onClick={abrirJanela}><IcBaixar />Baixar</button>
+      </>}>
 
-      {decididos.length > 0 && <div className="sum">
-        {decididos.map((i) => {
-          if (sem.dias[i].pulado)
-            return <button key={i} className="row" onClick={() => ir.dia(i)}><span className="ph">—</span><span><small>{DIAS[i]}</small><b>Dia pulado</b></span><span className="ed">Escolher</span></button>;
-          const p = pratos[sem.dias[i].prato_id];
-          return <button key={i} className="row" onClick={() => ir.dia(i)}><img src={p.img} alt="" /><span><small>{DIAS[i]}</small><b>{p.nome}</b></span><span className="ed">Ver</span></button>;
-        })}
-      </div>}
+      <p className="sobrelinha">Nossa mesa, nossa semana</p>
+      <h1 className="titulo">O que vamos comer <em>esta semana?</em></h1>
+      <p className="apoio">Uma semana de bons almoços começa com boas escolhas.</p>
+      {n > 0 && <p className="contagem">{n} {n === 1 ? "almoço planejado" : "almoços planejados"}</p>}
 
-      {n > 0 ? <>
-        <div className="addd" style={{ marginTop: 14 }}>
-          <button className="mini" onClick={() => copiar(listaComoTexto(listaDaSemana(dias.map((i) => sem.dias[i].prato_id), receitas)), "Lista da semana copiada", avisar)}>Copiar lista da semana</button>
+      {n === 0 && (
+        <section className="vazio-estado" aria-labelledby="vazio-titulo">
+          <MesaPosta />
+          <h2 id="vazio-titulo">Toda boa semana começa à mesa.</h2>
+          <p>Escolha os pratos que vão fazer parte dos próximos almoços.</p>
+          <button className="botao principal" onClick={comecar}>Começar meu cardápio</button>
+        </section>
+      )}
+
+      {decididos.length > 0 && (
+        <section aria-labelledby="menu-titulo">
+          <h2 className="secao" id="menu-titulo">Seu cardápio</h2>
+          <ol className="menu">
+            {decididos.map((i) => {
+              if (sem.dias[i].pulado)
+                return (
+                  <li key={i}>
+                    <button className="entrada" onClick={() => ir.dia(i)}>
+                      <span>
+                        <span className="entrada-dia">{DIAS[i]}</span>
+                        <span className="entrada-nome vazio">Sem almoço em casa</span>
+                        <span className="entrada-acao">Escolher um prato</span>
+                      </span>
+                      <span className="sem-foto"><Ramo /></span>
+                    </button>
+                  </li>
+                );
+              const p = pratos[sem.dias[i].prato_id];
+              return (
+                <li key={i}>
+                  <button className="entrada" onClick={() => ir.dia(i)}>
+                    <span>
+                      <span className="entrada-dia">{DIAS[i]}</span>
+                      <span className="entrada-nome">{p.nome}</span>
+                      <span className="entrada-acao">Ver receita</span>
+                    </span>
+                    <img src={p.img} alt="" />
+                  </button>
+                </li>
+              );
+            })}
+          </ol>
+          {n > 0 && (
+            <div className="acoes-lista">
+              <button className="botao contorno" onClick={copiarSemana}><IcLista />Copiar lista da semana</button>
+            </div>
+          )}
+        </section>
+      )}
+
+      {abertos.length > 0 && decididos.length > 0 && (
+        <section aria-labelledby="falta-titulo">
+          <h2 className="secao mini" id="falta-titulo">Ainda falta escolher</h2>
+          <div className="chips">
+            {abertos.map((i) => <button key={i} className="chip" onClick={() => ir.dia(i)}>{DIAS[i]}</button>)}
+          </div>
+        </section>
+      )}
+
+      <section className="familia" aria-label="Compartilhar com a família">
+        <div>
+          <p className="familia-rotulo">Código da família</p>
+          <button className="familia-codigo" onClick={() => copiar(codigo, "Código copiado", avisar)} aria-label={`Copiar código ${codigo.split("").join(" ")}`}>
+            {codigo}<IcCopiar />
+          </button>
         </div>
-        <p className="note">Toque em um dia para ver a receita e a lista de compras do prato.</p>
-      </> : <p className="note">Escolha pelo menos um dia para montar o cardápio.</p>}
-
-      {abertos.length > 0 && <>
-        <p className="kick" style={{ marginTop: 22 }}>Ainda sem prato</p>
-        <div className="addd">{abertos.map((i) => <button key={i} className="mini" onClick={() => ir.dia(i)}>{DIAS[i]}</button>)}</div>
-      </>}
-
-      <div className="fam">
-        <span><small>Código da família</small><b>{codigo}</b></span>
-        <button className="mini" onClick={compartilharFamilia}>Chamar a família</button>
-      </div>
+        <button className="link" onClick={compartilharFamilia}>Chamar a família</button>
+      </section>
 
       {janelaAberta && <JanelaBaixar fechar={fecharJanela} gerar={async (tipo) => {
         const blob = tipo === "lista" ? await pdfLista(dias, sem, cardapio) : await pdfCardapio(dias, sem, cardapio);
@@ -107,7 +156,7 @@ function JanelaBaixar({ fechar, gerar }) {
           <span className="ic"><IcLivro /></span>
           <span><b>{ocupado === "cardapio" ? "Gerando…" : "Cardápio completo"}</b><small>Cada dia com o prato, o modo de preparo e a lista de compras daquele prato.</small></span>
         </button>
-        <button className="ghost" onClick={fechar}>Cancelar</button>
+        <button className="botao contorno cheio" onClick={fechar}>Cancelar</button>
       </div>
     </div>
   );

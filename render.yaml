@@ -5,6 +5,7 @@ services:
     name: alimimi
     runtime: docker
     plan: free
+    region: oregon   # região do serviço já criado (não muda depois); o banco no Neon deve ficar em AWS US West 2 (Oregon)
     healthCheckPath: /api/saude
     envVars:
       - key: DATABASE_URL
