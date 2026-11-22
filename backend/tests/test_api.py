@@ -43,6 +43,15 @@ def test_cardapio(api):
     assert api.get("/img/carne0.jpg").headers["content-type"] == "image/jpeg"
 
 
+def test_toda_foto_existe(api):
+    """Cada prato tem a foto no arquivo do seu próprio id (/img/<id>.jpg)."""
+    c = api.get("/api/cardapio").json()
+    for pid, p in c["pratos"].items():
+        assert p["img"] == f"/img/{pid}.jpg"
+        r = api.get(p["img"])
+        assert r.status_code == 200 and r.headers["content-type"] == "image/jpeg", pid
+
+
 def test_familia_nova_vazia(api, fam):
     s = api.get(f"/api/familias/{fam}").json()
     assert len(fam) == 6 and s["dias"] == {} and s["compras"] == {}
