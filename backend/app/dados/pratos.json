@@ -1,0 +1,261 @@
+[
+ {
+  "id": "carne",
+  "nome": "Carne",
+  "pratos": [
+   {
+    "id": "carne0",
+    "nome": "Rosbife ao molho de mostarda",
+    "descricao": "Carne assada rosada por dentro, fatiada finamente e acompanhada de molho cremoso de mostarda."
+   },
+   {
+    "id": "carne1",
+    "nome": "Carne ensopada com legumes",
+    "descricao": "Cubos de carne macios, cozidos lentamente com cenoura, batata e caldo encorpado."
+   },
+   {
+    "id": "carne2",
+    "nome": "Carne de panela ao vinho tinto",
+    "descricao": "Carne lentamente braseada em vinho, com molho intenso e aromático."
+   },
+   {
+    "id": "carne3",
+    "nome": "Medalhão ao molho de mostarda Dijon",
+    "descricao": "Medalhões selados com molho aveludado de mostarda e creme."
+   },
+   {
+    "id": "carne4",
+    "nome": "Picadinho de filé com cogumelos",
+    "descricao": "Tiras de carne suculentas com cogumelos frescos dourados na manteiga."
+   },
+   {
+    "id": "carne5",
+    "nome": "Fraldinha assada com cebolas caramelizadas",
+    "descricao": "Carne assada, suculenta e servida com cebolas doces e douradas."
+   },
+   {
+    "id": "carne6",
+    "nome": "Kafta bovina libanesa",
+    "descricao": "Carne moída temperada com especiarias, salsinha e cebola, moldada e grelhada."
+   },
+   {
+    "id": "carne7",
+    "nome": "Kafta de forno com batatas e tomate",
+    "descricao": "Preparação libanesa com carne temperada, batatas e tomates assados."
+   },
+   {
+    "id": "carne8",
+    "nome": "Bulgogi coreano",
+    "descricao": "Carne bovina fininha marinada em shoyu, alho, gengibre e ingredientes levemente adocicados."
+   },
+   {
+    "id": "carne9",
+    "nome": "Carne com brócolis oriental",
+    "descricao": "Tiras de carne salteadas com brócolis e molho brilhante de shoyu."
+   },
+   {
+    "id": "carne10",
+    "nome": "Ragu de carne bovina",
+    "descricao": "Carne desfiada após cozimento prolongado em molho de tomate e vinho, ótima para massas."
+   },
+   {
+    "id": "carne11",
+    "nome": "Fajitas de carne",
+    "descricao": "Tiras de carne grelhadas com pimentões e cebola, servidas com tortillas e acompanhamentos mexicanos."
+   },
+   {
+    "id": "carne12",
+    "nome": "Lasanha à Bolonhesa",
+    "descricao": "Camadas de massa, ragu bolonhesa, molho bechamel e queijo gratinado."
+   },
+   {
+    "id": "carne13",
+    "nome": "Abobrinha recheada libanesa (Kousa Mahshi)",
+    "descricao": "Abobrinhas recheadas com carne moída e arroz, cozidas em molho de tomate."
+   },
+   {
+    "id": "carne14",
+    "nome": "Escondidinho de carne-seca com mandioca",
+    "descricao": "Carne-seca desfiada sob purê cremoso de mandioca e queijo gratinado."
+   }
+  ]
+ },
+ {
+  "id": "frango",
+  "nome": "Frango",
+  "pratos": [
+   {
+    "id": "frango0",
+    "nome": "Galinhada brasileira",
+    "descricao": "Arroz cozido junto com frango temperado, formando um prato completo e aromático."
+   },
+   {
+    "id": "frango1",
+    "nome": "Kafta de frango",
+    "descricao": "Frango moído com especiarias e ervas, moldado em espetinhos grelhados."
+   },
+   {
+    "id": "frango2",
+    "nome": "Sobrecoxas assadas com limão e ervas",
+    "descricao": "Sobrecoxas suculentas com pele dourada, alho e ervas aromáticas."
+   },
+   {
+    "id": "frango3",
+    "nome": "Frango cremoso com cogumelos",
+    "descricao": "Frango selado em molho de creme, manteiga e cogumelos frescos."
+   },
+   {
+    "id": "frango4",
+    "nome": "Frango à provençal",
+    "descricao": "Frango com alho, tomate, ervas mediterrâneas e azeite."
+   },
+   {
+    "id": "frango5",
+    "nome": "Frango ao curry com leite de coco",
+    "descricao": "Frango em molho cremoso e perfumado com especiarias e leite de coco."
+   },
+   {
+    "id": "frango6",
+    "nome": "Frango teriyaki com gergelim",
+    "descricao": "Frango dourado com molho japonês agridoce, finalizado com gergelim."
+   },
+   {
+    "id": "frango7",
+    "nome": "Shish Tawook",
+    "descricao": "Espetinhos libaneses de frango marinado em iogurte, limão e especiarias."
+   },
+   {
+    "id": "frango8",
+    "nome": "Shawarma de frango",
+    "descricao": "Frango marinado em especiarias árabes, assado e fatiado para servir com pão e molhos."
+   },
+   {
+    "id": "frango9",
+    "nome": "Frango à caçadora italiano",
+    "descricao": "Frango lentamente cozido com tomate, vinho, ervas e legumes."
+   },
+   {
+    "id": "frango10",
+    "nome": "Pollo al Ajillo",
+    "descricao": "Frango espanhol dourado com bastante alho, azeite e vinho branco."
+   },
+   {
+    "id": "frango11",
+    "nome": "Karaage japonês",
+    "descricao": "Pedaços de frango marinados com shoyu e gengibre, empanados e fritos até ficarem crocantes."
+   },
+   {
+    "id": "frango12",
+    "nome": "Frango inteiro assado",
+    "descricao": "Frango com pele dourada, temperado com manteiga, alho e ervas."
+   },
+   {
+    "id": "frango13",
+    "nome": "Lasanha de frango com pesto",
+    "descricao": "Camadas de massa, frango desfiado, pesto de manjericão, molho cremoso e queijo gratinado."
+   },
+   {
+    "id": "frango14",
+    "nome": "Lasanha de frango com molho de cogumelos",
+    "descricao": "Frango desfiado com molho branco, cogumelos frescos salteados e queijo."
+   }
+  ]
+ },
+ {
+  "id": "peixe",
+  "nome": "Peixe e frutos do mar",
+  "pratos": [
+   {
+    "id": "peixe0",
+    "nome": "Salmão grelhado com manteiga de ervas",
+    "descricao": "Salmão dourado por fora e úmido por dentro, com manteiga aromática."
+   },
+   {
+    "id": "peixe1",
+    "nome": "Peixe branco com manteiga, limão e alcaparras",
+    "descricao": "Filé delicado acompanhado de molho amanteigado, cítrico e salino."
+   },
+   {
+    "id": "peixe2",
+    "nome": "Camarão ao curry",
+    "descricao": "Camarões em molho cremoso com especiarias, ideal para servir com arroz."
+   },
+   {
+    "id": "peixe3",
+    "nome": "Sayadieh libanês",
+    "descricao": "Peixe servido com arroz condimentado, cebolas caramelizadas e especiarias."
+   },
+   {
+    "id": "peixe4",
+    "nome": "Gambas al Ajillo",
+    "descricao": "Camarões espanhóis salteados no azeite com alho e pimenta."
+   },
+   {
+    "id": "peixe5",
+    "nome": "Peixe en Papillote",
+    "descricao": "Peixe assado em envelope com legumes, ervas e limão, preservando a umidade."
+   },
+   {
+    "id": "peixe6",
+    "nome": "Salmão ao molho de maracujá",
+    "descricao": "Salmão selado com molho de maracujá equilibrando acidez e doçura."
+   },
+   {
+    "id": "peixe7",
+    "nome": "Bacalhau com natas e batatas",
+    "descricao": "Bacalhau português desfiado com batatas, creme e cobertura gratinada."
+   },
+   {
+    "id": "peixe8",
+    "nome": "Filé de peixe grelhado",
+    "descricao": "Peixe branco delicadamente temperado, com superfície dourada."
+   },
+   {
+    "id": "peixe9",
+    "nome": "Peixe ao molho de camarão",
+    "descricao": "Filé de peixe servido com molho rico de tomate e camarões."
+   },
+   {
+    "id": "peixe10",
+    "nome": "Bobó de camarão",
+    "descricao": "Camarão em creme de mandioca, leite de coco e dendê."
+   },
+   {
+    "id": "peixe11",
+    "nome": "Peixe com crosta de ervas",
+    "descricao": "Filé de peixe assado com cobertura crocante de ervas, alho, azeite e farinha de rosca ou panko."
+   }
+  ]
+ },
+ {
+  "id": "suina",
+  "nome": "Carne suína",
+  "pratos": [
+   {
+    "id": "suina0",
+    "nome": "Lombo suíno ao molho de laranja",
+    "descricao": "Lombo assado com molho cítrico e levemente adocicado."
+   },
+   {
+    "id": "suina1",
+    "nome": "Filé mignon suíno com mostarda e mel",
+    "descricao": "Medalhões suínos dourados com molho agridoce."
+   },
+   {
+    "id": "suina2",
+    "nome": "Pernil assado lentamente com alho e ervas",
+    "descricao": "Carne suína macia, assada até criar uma crosta dourada."
+   },
+   {
+    "id": "suina3",
+    "nome": "Costelinha suína agridoce",
+    "descricao": "Costelinhas caramelizadas com molho de equilíbrio doce, ácido e salgado."
+   },
+   {
+    "id": "suina4",
+    "nome": "Carnitas mexicanas",
+    "descricao": "Carne suína cozida lentamente com especiarias e cítricos, depois dourada até ficar crocante nas bordas."
+   }
+  ]
+ }
+]

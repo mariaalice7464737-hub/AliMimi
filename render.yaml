@@ -1,0 +1,11 @@
+# Render Blueprint: no painel do Render, "New > Blueprint" e escolha este repositório.
+# Ele pede o DATABASE_URL (a connection string do Neon) na hora de criar.
+services:
+  - type: web
+    name: alimimi
+    runtime: docker
+    plan: free
+    healthCheckPath: /api/saude
+    envVars:
+      - key: DATABASE_URL
+        sync: false
