@@ -13,12 +13,20 @@ DADOS = Path(__file__).parent / "dados"
 ORDEM = ["carne", "frango", "massa", "peixe", "suina"]
 # "Massas" é uma categoria montada a partir de pratos que já existem em outras
 MASSAS = ["carne12", "carne10", "frango13", "frango14"]
-# Foto de capa de cada categoria (padrão: o primeiro prato)
-CAPAS = {"frango": "frango12"}
+# Capas próprias das categorias (static/img/categorias/<id>.jpg, do catálogo editorial).
+# Categoria sem capa própria usa a foto de um prato: CAPAS_PRATO, ou o primeiro prato.
+CAPAS_PRATO = {"massa": "carne12"}
+PASTA_CAPAS = Path(__file__).parent / "static" / "img" / "categorias"
 
 
 def _img(prato_id: str) -> str:
     return f"/img/{prato_id}.jpg"
+
+
+def _capa(cat: dict) -> str:
+    if (PASTA_CAPAS / f"{cat['id']}.jpg").exists():
+        return f"/img/categorias/{cat['id']}.jpg"
+    return _img(CAPAS_PRATO.get(cat["id"], cat["pratos"][0]))
 
 
 @lru_cache
@@ -41,7 +49,7 @@ def carregar() -> dict:
 
     categorias.sort(key=lambda c: ORDEM.index(c["id"]) if c["id"] in ORDEM else len(ORDEM))
     for c in categorias:
-        c["capa"] = _img(CAPAS.get(c["id"], c["pratos"][0]))
+        c["capa"] = _capa(c)
 
     return {"categorias": categorias, "pratos": pratos, "receitas": receitas}
 
