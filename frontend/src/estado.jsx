@@ -15,7 +15,7 @@ export function CardapioProvider({ children }) {
   const [erro, setErro] = useState(false);
   const carregar = useCallback(() => { setErro(false); api.cardapio().then(setDados).catch(() => setErro(true)); }, []);
   useEffect(carregar, [carregar]);
-  if (erro) return <p className="load">Não consegui carregar o cardápio.<br /><button className="lnk" onClick={carregar}>Tentar de novo</button></p>;
+  if (erro) return <p className="load">Não consegui carregar o cardápio.<br /><button className="link" onClick={carregar}>Tentar de novo</button></p>;
   if (!dados) return <p className="load">Carregando o cardápio…</p>;
   return <CardapioCtx.Provider value={dados}>{children}</CardapioCtx.Provider>;
 }

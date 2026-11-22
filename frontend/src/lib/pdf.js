@@ -2,7 +2,7 @@
 import { DIAS, CURTO } from "./dias";
 import { listaDaSemana } from "./lista";
 
-const VERMELHO = [200, 54, 31], TINTA = [33, 28, 24], CINZA = [109, 99, 91], LINHA = [228, 222, 214];
+const VERMELHO = [165, 72, 55] /* terracota */, TINTA = [33, 28, 24], CINZA = [109, 99, 91], LINHA = [228, 222, 214];
 // a fonte padrão do jsPDF não tem travessão, bolinha nem ≈
 const ascii = (s) => String(s).replace(/[—–]/g, "-").replace(/[•·]/g, "-").replace(/≈/g, "~");
 const semanaCurta = (dias) => dias.map((i) => CURTO[i]).join(", ");

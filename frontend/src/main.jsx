@@ -8,6 +8,16 @@ import Cardapio from "./telas/Cardapio";
 import Categorias from "./telas/Categorias";
 import Pratos from "./telas/Pratos";
 import Receita from "./telas/Receita";
+/* fontes embutidas no app (sem depender do Google Fonts); só o subconjunto latino, que cobre o português */
+import "@fontsource/playfair-display/latin-400.css";
+import "@fontsource/playfair-display/latin-500.css";
+import "@fontsource/playfair-display/latin-600.css";
+import "@fontsource/playfair-display/latin-400-italic.css";
+import "@fontsource/playfair-display/latin-500-italic.css";
+import "@fontsource/dm-sans/latin-400.css";
+import "@fontsource/dm-sans/latin-500.css";
+import "@fontsource/dm-sans/latin-600.css";
+import "@fontsource/dm-sans/latin-700.css";
 import "./estilo.css";
 
 /*
