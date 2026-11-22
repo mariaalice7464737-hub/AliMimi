@@ -5,7 +5,7 @@ Plataforma para organizar o cardápio semanal da família. Cada dia você escolh
 A semana é **compartilhada**: quem começa recebe um código de família (ex.: `K7QM2P`) e manda o link para os outros. Todo mundo vê e edita a mesma semana, inclusive o carrinho de compras.
 
 ```
-backend/    API em Python (FastAPI + SQLite): cardápio e semana de cada família
+backend/    API em Python (FastAPI; SQLite no computador, Postgres em produção)
 frontend/   App em React (Vite): as telas do celular
 ```
 
@@ -50,8 +50,29 @@ Variáveis de ambiente:
 
 | Variável | Padrão | Para que serve |
 |---|---|---|
-| `ALIMIMI_DB` | `backend/alimimi.db` | arquivo SQLite com as semanas das famílias |
+| `DATABASE_URL` | (vazio) | URL de um Postgres (ex.: Neon). Se existir, é usada no lugar do SQLite |
+| `ALIMIMI_DB` | `backend/alimimi.db` | arquivo SQLite com as semanas das famílias (quando não há `DATABASE_URL`) |
 | `ALIMIMI_FRONT` | `frontend/dist` | pasta do front compilado |
+| `PORT` | `8000` | porta do servidor no Docker (o Render define sozinho) |
+
+## Colocar no ar de graça (Render + Neon)
+
+O Render gratuito apaga os arquivos do servidor sempre que ele reinicia ou "dorme", então a semana fica guardada num Postgres gratuito do **Neon**, que não expira.
+
+**1. Banco no Neon** (uns 2 minutos)
+1. Crie uma conta em https://neon.com (dá para entrar com o GitHub).
+2. Crie um projeto chamado `alimimi`, com a região mais perto (ex.: São Paulo, se aparecer; senão, `US East`).
+3. Na tela do projeto, clique em **Connect** e copie a *connection string*. Ela começa com `postgresql://` e termina com `?sslmode=require`.
+
+**2. App no Render**
+1. Crie uma conta em https://render.com (dá para entrar com o GitHub).
+2. **New → Blueprint**, escolha o repositório **AliMimi** (o arquivo `render.yaml` já diz o que criar).
+3. Quando o Render pedir `DATABASE_URL`, cole a connection string do Neon e clique em **Apply**.
+4. Espere o primeiro deploy (uns 5 minutos). O endereço do app aparece no topo, algo como `https://alimimi.onrender.com`.
+
+Depois disso, todo push no `main` atualiza o app sozinho. As tabelas são criadas automaticamente na primeira vez.
+
+**Bom saber:** no plano gratuito o Render "dorme" depois de 15 minutos sem ninguém usar. O primeiro acesso depois disso demora cerca de 1 minuto (aparece uma tela de carregamento); os seguintes são rápidos. A semana fica salva no Neon e não se perde.
 
 ## API
 
@@ -73,7 +94,11 @@ A documentação interativa fica em http://localhost:8000/docs.
 cd backend
 pip install -r requirements-dev.txt
 python -m pytest
+# para testar também num Postgres:
+TEST_DATABASE_URL=postgresql://usuario:senha@localhost:5432/teste python -m pytest
 ```
+
+No GitHub, o Actions (`.github/workflows/testes.yml`) roda os testes do back no SQLite e no Postgres, e o build do front, a cada pull request e a cada push no `main`.
 
 ## Onde mexer
 

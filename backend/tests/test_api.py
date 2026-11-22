@@ -1,12 +1,30 @@
+import os
+
 import pytest
 from fastapi.testclient import TestClient
 
 from app.main import criar_app
 
+# Os testes rodam no SQLite e, se TEST_DATABASE_URL existir, também num Postgres de verdade
+PG = os.environ.get("TEST_DATABASE_URL")
+BANCOS = ["sqlite"] + (["postgres"] if PG else [])
 
-@pytest.fixture
-def api(tmp_path):
-    return TestClient(criar_app(str(tmp_path / "teste.db"), pasta_front=str(tmp_path / "sem-front")))
+
+def _zerar_postgres():
+    import psycopg
+    with psycopg.connect(PG, autocommit=True) as c:
+        c.execute("DROP TABLE IF EXISTS compras, dias, familias")
+
+
+@pytest.fixture(params=BANCOS)
+def api(request, tmp_path):
+    if request.param == "postgres":
+        _zerar_postgres()
+        endereco = PG
+    else:
+        endereco = str(tmp_path / "teste.db")
+    with TestClient(criar_app(endereco, pasta_front=str(tmp_path / "sem-front"))) as cliente:
+        yield cliente
 
 
 @pytest.fixture

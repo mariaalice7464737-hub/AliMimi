@@ -11,6 +11,7 @@
 Em produção o mesmo servidor entrega o front já compilado (frontend/dist).
 """
 import os
+from contextlib import asynccontextmanager
 from pathlib import Path
 
 from fastapi import FastAPI, HTTPException, Path as P
@@ -66,8 +67,15 @@ def _checar_itens(prato_id: str, itens: list[int]):
 
 
 def criar_app(caminho_db: str | None = None, pasta_front: str | None = None) -> FastAPI:
-    app = FastAPI(title="AliMimi — Almoço da Semana", version="1.0")
-    banco = Banco(caminho_db or os.environ.get("ALIMIMI_DB", str(AQUI.parent / "alimimi.db")))
+    # Postgres se houver DATABASE_URL (produção); senão, arquivo SQLite local
+    banco = Banco(caminho_db or os.environ.get("DATABASE_URL") or os.environ.get("ALIMIMI_DB", str(AQUI.parent / "alimimi.db")))
+
+    @asynccontextmanager
+    async def ciclo(app):
+        yield
+        banco.fechar()
+
+    app = FastAPI(title="AliMimi — Almoço da Semana", version="1.1", lifespan=ciclo)
 
     def familia(codigo: str) -> str:
         codigo = codigo.strip().upper()

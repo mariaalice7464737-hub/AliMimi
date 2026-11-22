@@ -16,4 +16,5 @@ COPY --from=front /front/dist /app/frontend/dist
 ENV ALIMIMI_DB=/data/alimimi.db ALIMIMI_FRONT=/app/frontend/dist
 RUN mkdir -p /data
 EXPOSE 8000
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+# o Render informa a porta em $PORT; no computador fica 8000
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]

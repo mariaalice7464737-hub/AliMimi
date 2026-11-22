@@ -1,4 +1,7 @@
-"""Banco SQLite com a semana de cada família.
+"""Banco com a semana de cada família.
+
+SQLite no computador (arquivo local) ou Postgres em produção (quando há DATABASE_URL,
+ex.: Neon). As consultas são as mesmas; só o jeito de conectar muda.
 
 Tabelas:
   familias(codigo, criada_em, atualizada_em)
@@ -41,15 +44,42 @@ def agora() -> str:
     return datetime.now(timezone.utc).isoformat(timespec="seconds")
 
 
+class _Postgres:
+    """Deixa uma conexão psycopg com a mesma cara da sqlite3 (placeholders "?")."""
+    def __init__(self, c):
+        self.c = c
+
+    def execute(self, sql, params=()):
+        return self.c.execute(sql.replace("?", "%s"), params)
+
+
 class Banco:
-    def __init__(self, caminho: str):
-        self.caminho = caminho
+    def __init__(self, endereco: str):
+        """endereco: caminho de um arquivo .db (SQLite) ou URL postgresql://…"""
+        self.pg = endereco.startswith(("postgres://", "postgresql://"))
+        if self.pg:
+            from psycopg.rows import dict_row
+            from psycopg_pool import ConnectionPool
+            self.pool = ConnectionPool(
+                endereco.replace("postgres://", "postgresql://", 1),
+                min_size=1, max_size=5, open=True,
+                kwargs={"row_factory": dict_row},
+                check=ConnectionPool.check_connection,  # o Neon derruba conexões paradas
+            )
+        else:
+            self.caminho = endereco
         with self.conexao() as c:
-            c.execute("PRAGMA journal_mode=WAL")
-            c.executescript(ESQUEMA)
+            if not self.pg:
+                c.execute("PRAGMA journal_mode=WAL")
+            for comando in filter(str.strip, ESQUEMA.split(";")):
+                c.execute(comando)
 
     @contextmanager
     def conexao(self):
+        if self.pg:
+            with self.pool.connection() as c:  # o pool faz commit (ou rollback se der erro)
+                yield _Postgres(c)
+            return
         c = sqlite3.connect(self.caminho)
         c.row_factory = sqlite3.Row
         c.execute("PRAGMA foreign_keys=ON")
@@ -59,16 +89,19 @@ class Banco:
         finally:
             c.close()
 
+    def fechar(self):
+        if self.pg:
+            self.pool.close()
+
     # ---------- famílias ----------
     def criar_familia(self) -> str:
         with self.conexao() as c:
             while True:
                 codigo = "".join(secrets.choice(ALFABETO) for _ in range(TAM_CODIGO))
-                try:
-                    c.execute("INSERT INTO familias VALUES(?,?,?)", (codigo, agora(), agora()))
+                cur = c.execute("INSERT INTO familias VALUES(?,?,?) ON CONFLICT(codigo) DO NOTHING", (codigo, agora(), agora()))
+                if cur.rowcount == 1:
                     return codigo
-                except sqlite3.IntegrityError:
-                    continue  # código repetido (raríssimo): tenta outro
+                # código repetido (raríssimo): tenta outro
 
     def existe(self, codigo: str) -> bool:
         with self.conexao() as c:
