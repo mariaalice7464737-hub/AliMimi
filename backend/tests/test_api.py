@@ -43,15 +43,13 @@ def test_cardapio(api):
     assert api.get("/img/carne0.jpg").headers["content-type"] == "image/jpeg"
 
 
-def test_toda_foto_e_capa_existe(api):
+def test_toda_foto_existe(api):
+    """Cada prato tem a foto no arquivo do seu próprio id (/img/<id>.jpg)."""
     c = api.get("/api/cardapio").json()
-    urls = [p["img"] for p in c["pratos"].values()] + [x["capa"] for x in c["categorias"]]
-    for url in urls:
-        r = api.get(url)
-        assert r.status_code == 200 and r.headers["content-type"] == "image/jpeg", url
-    capas = {x["id"]: x["capa"] for x in c["categorias"]}
-    assert capas["carne"] == "/img/categorias/carne.jpg"
-    assert capas["massa"] == "/img/carne12.jpg"  # sem capa própria: foto da lasanha
+    for pid, p in c["pratos"].items():
+        assert p["img"] == f"/img/{pid}.jpg"
+        r = api.get(p["img"])
+        assert r.status_code == 200 and r.headers["content-type"] == "image/jpeg", pid
 
 
 def test_familia_nova_vazia(api, fam):
