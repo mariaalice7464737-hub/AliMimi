@@ -53,7 +53,6 @@ export default function Cardapio() {
 
       <p className="sobrelinha">Nossa mesa, nossa semana</p>
       <h1 className="titulo">O que vamos comer <em>esta semana?</em></h1>
-      <p className="apoio">Uma semana de bons almoços começa com boas escolhas.</p>
       {n > 0 && <p className="contagem">{n} {n === 1 ? "almoço planejado" : "almoços planejados"}</p>}
 
       {n === 0 && (
