@@ -86,11 +86,28 @@ export function useSemanaRemota(codigo) {
     }, () => api.escolher(codigo, dia, pratoId)),
     acompanhamentos: (dia, itens) => mudar((s) => {
       const unicos = [...new Set(itens)];
+      const carrinho = s.compras_acompanhamentos?.[dia];
+      if (carrinho) for (const id of Object.keys(carrinho)) if (!unicos.includes(id)) delete carrinho[id];
       s.dias[dia] = unicos.length ? { ...s.dias[dia], acompanhamentos: unicos } : { prato_id: s.dias[dia].prato_id }; return s;
     }, () => api.acompanhamentos(codigo, dia, itens)),
-    pular: (dia) => mudar((s) => { delete s.compras[dia]; s.dias[dia] = { pulado: true }; return s; }, () => api.pular(codigo, dia)),
+    pular: (dia) => mudar((s) => {
+      delete s.compras[dia]; if (s.compras_acompanhamentos) delete s.compras_acompanhamentos[dia];
+      s.dias[dia] = { pulado: true }; return s;
+    }, () => api.pular(codigo, dia)),
     marcar: (dia, itens) => mudar((s) => { s.compras[dia] = itens; return s; }, () => api.compras(codigo, dia, itens)),
-    substituir: (nova) => mudar(() => structuredClone({ ...sem, dias: nova.dias, compras: nova.compras }), () => api.substituir(codigo, nova)),
+    marcarAcomp: (dia, item, itens) => mudar((s) => {
+      s.compras_acompanhamentos = s.compras_acompanhamentos || {};
+      (s.compras_acompanhamentos[dia] ||= {})[item] = itens; return s;
+    }, () => api.comprasAcomp(codigo, dia, item, itens)),
+    /* acrescenta o item nos dias pedidos que têm proteína e ainda não o têm (o servidor confere de novo) */
+    repetir: (item, dias) => mudar((s) => {
+      for (const d of dias) {
+        const dia = s.dias[d];
+        if (dia?.prato_id && !(dia.acompanhamentos || []).includes(item)) dia.acompanhamentos = [...(dia.acompanhamentos || []), item];
+      }
+      return s;
+    }, () => api.repetir(codigo, item, dias)),
+    substituir: (nova) => mudar(() => structuredClone({ ...sem, dias: nova.dias, compras: nova.compras, compras_acompanhamentos: nova.compras_acompanhamentos || {} }), () => api.substituir(codigo, nova)),
   };
 
   return { sem, erro, acoes, codigo };

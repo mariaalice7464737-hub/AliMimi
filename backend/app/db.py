@@ -9,6 +9,7 @@ Tabelas:
   compras(codigo, dia, itens)                -> índices dos ingredientes já no carrinho (JSON)
   acompanhamentos(codigo, dia, item_id, ordem) -> acompanhamentos do dia (zero ou mais). Tabela nova:
                                                 semanas antigas simplesmente não têm linhas aqui.
+  compras_acompanhamentos(codigo, dia, item_id, itens) -> carrinho de cada acompanhamento do dia (JSON)
 """
 import json
 import secrets
@@ -44,6 +45,13 @@ CREATE TABLE IF NOT EXISTS acompanhamentos(
   dia INTEGER NOT NULL CHECK(dia BETWEEN 0 AND 6),
   item_id TEXT NOT NULL,
   ordem INTEGER NOT NULL,
+  PRIMARY KEY(codigo, dia, item_id)
+);
+CREATE TABLE IF NOT EXISTS compras_acompanhamentos(
+  codigo TEXT NOT NULL REFERENCES familias(codigo) ON DELETE CASCADE,
+  dia INTEGER NOT NULL,
+  item_id TEXT NOT NULL,
+  itens TEXT NOT NULL,
   PRIMARY KEY(codigo, dia, item_id)
 );
 """
@@ -132,7 +140,13 @@ class Banco:
                 d = dias.get(str(r["dia"]))
                 if d and d.get("prato_id"):
                     d.setdefault("acompanhamentos", []).append(r["item_id"])
-        return {"codigo": codigo, "dias": dias, "compras": compras, "atualizada_em": fam["atualizada_em"]}
+            carrinho_acomp: dict[str, dict[str, list[int]]] = {}
+            for r in c.execute("SELECT * FROM compras_acompanhamentos WHERE codigo=? ORDER BY dia, item_id", (codigo,)):
+                carrinho_acomp.setdefault(str(r["dia"]), {})[r["item_id"]] = json.loads(r["itens"])
+        semana = {"codigo": codigo, "dias": dias, "compras": compras, "atualizada_em": fam["atualizada_em"]}
+        if carrinho_acomp:  # só aparece quando existe: semanas antigas mantêm a mesma resposta
+            semana["compras_acompanhamentos"] = carrinho_acomp
+        return semana
 
     def _tocar(self, c, codigo):
         c.execute("UPDATE familias SET atualizada_em=? WHERE codigo=?", (agora(), codigo))
@@ -147,6 +161,7 @@ class Banco:
             # trocar a proteína mantém os acompanhamentos; pular o dia (sem almoço) tira
             if pulado:
                 c.execute("DELETE FROM acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
+                c.execute("DELETE FROM compras_acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
             c.execute(
                 "INSERT INTO dias VALUES(?,?,?,?) ON CONFLICT(codigo,dia) DO UPDATE SET prato_id=excluded.prato_id, pulado=excluded.pulado",
                 (codigo, dia, None if pulado else prato_id, int(pulado)),
@@ -158,6 +173,7 @@ class Banco:
             c.execute("DELETE FROM dias WHERE codigo=? AND dia=?", (codigo, dia))
             c.execute("DELETE FROM compras WHERE codigo=? AND dia=?", (codigo, dia))
             c.execute("DELETE FROM acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
+            c.execute("DELETE FROM compras_acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
             self._tocar(c, codigo)
 
     def prato_do_dia(self, codigo: str, dia: int) -> str | None:
@@ -167,11 +183,46 @@ class Banco:
 
     # ---------- acompanhamentos ----------
     def definir_acompanhamentos(self, codigo: str, dia: int, itens: list[str]):
-        """Substitui os acompanhamentos do dia (ordem preservada, sem repetir)."""
+        """Substitui os acompanhamentos do dia (ordem preservada, sem repetir).
+        O carrinho de quem saiu do dia é apagado; o de quem ficou, mantido."""
+        itens = list(dict.fromkeys(itens))
         with self.conexao() as c:
             c.execute("DELETE FROM acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
-            for ordem, item in enumerate(dict.fromkeys(itens)):
+            for ordem, item in enumerate(itens):
                 c.execute("INSERT INTO acompanhamentos VALUES(?,?,?,?)", (codigo, dia, item, ordem))
+            for r in c.execute("SELECT item_id FROM compras_acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia)).fetchall():
+                if r["item_id"] not in itens:
+                    c.execute("DELETE FROM compras_acompanhamentos WHERE codigo=? AND dia=? AND item_id=?", (codigo, dia, r["item_id"]))
+            self._tocar(c, codigo)
+
+    def acompanhamentos_do_dia(self, codigo: str, dia: int) -> list[str]:
+        with self.conexao() as c:
+            return [r["item_id"] for r in c.execute(
+                "SELECT item_id FROM acompanhamentos WHERE codigo=? AND dia=? ORDER BY ordem", (codigo, dia))]
+
+    def repetir_acompanhamento(self, codigo: str, item: str, dias: list[int]) -> tuple[list[int], list[int]]:
+        """Acrescenta o item ao fim da lista de cada dia pedido. Não substitui nada, não repete
+        no mesmo dia e ignora dias pulados ou sem proteína. Devolve (aplicados, ignorados)."""
+        aplicados, ignorados = [], []
+        with self.conexao() as c:
+            for dia in sorted(set(dias)):
+                r = c.execute("SELECT prato_id FROM dias WHERE codigo=? AND dia=?", (codigo, dia)).fetchone()
+                atuais = [x["item_id"] for x in c.execute(
+                    "SELECT item_id FROM acompanhamentos WHERE codigo=? AND dia=? ORDER BY ordem", (codigo, dia))]
+                if not r or not r["prato_id"] or item in atuais:
+                    ignorados.append(dia); continue
+                c.execute("INSERT INTO acompanhamentos VALUES(?,?,?,?)", (codigo, dia, item, len(atuais)))
+                aplicados.append(dia)
+            if aplicados:
+                self._tocar(c, codigo)
+        return aplicados, ignorados
+
+    def definir_compras_acompanhamento(self, codigo: str, dia: int, item: str, itens: list[int]):
+        with self.conexao() as c:
+            c.execute(
+                "INSERT INTO compras_acompanhamentos VALUES(?,?,?,?) ON CONFLICT(codigo,dia,item_id) DO UPDATE SET itens=excluded.itens",
+                (codigo, dia, item, json.dumps(sorted(set(itens)))),
+            )
             self._tocar(c, codigo)
 
     # ---------- compras ----------
@@ -184,12 +235,16 @@ class Banco:
             self._tocar(c, codigo)
 
     # ---------- semana inteira ----------
-    def substituir_semana(self, codigo: str, dias: dict, compras: dict):
+    def substituir_semana(self, codigo: str, dias: dict, compras: dict, compras_acomp: dict | None = None):
         """Apaga tudo e grava de novo (usado por "Recomeçar" e "Desfazer")."""
         with self.conexao() as c:
             c.execute("DELETE FROM dias WHERE codigo=?", (codigo,))
             c.execute("DELETE FROM compras WHERE codigo=?", (codigo,))
             c.execute("DELETE FROM acompanhamentos WHERE codigo=?", (codigo,))
+            c.execute("DELETE FROM compras_acompanhamentos WHERE codigo=?", (codigo,))
+            for dia, por_item in (compras_acomp or {}).items():
+                for item, itens in por_item.items():
+                    c.execute("INSERT INTO compras_acompanhamentos VALUES(?,?,?,?)", (codigo, int(dia), item, json.dumps(sorted(set(itens)))))
             for dia, v in dias.items():
                 c.execute("INSERT INTO dias VALUES(?,?,?,?)", (codigo, int(dia), v.get("prato_id"), int(bool(v.get("pulado")))))
                 if v.get("prato_id"):

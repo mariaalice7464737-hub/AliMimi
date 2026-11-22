@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import Repetir from "../componentes/Repetir";
 import { Navigate, useParams, useSearchParams } from "react-router-dom";
 import Tela from "../componentes/Tela";
 import { IcCheck, IcCopiar } from "../componentes/Ilustracoes";
@@ -72,8 +73,10 @@ export default function Receita() {
         <ol className="passos">{r.preparo.map((s, k) => <li key={k}><span>{s}</span></li>)}</ol>
       </>}
       {(ir.temAcompanhamentos() || acompanhamentosDoDia(sem, d).length > 0) && (
-        <AcompanhamentosDoDia ids={acompanhamentosDoDia(sem, d).filter((a) => acompanhamentos?.itens?.[a])}
+        <AcompanhamentosDoDia dia={d} ids={acompanhamentosDoDia(sem, d).filter((a) => acompanhamentos?.itens?.[a])}
           itens={acompanhamentos?.itens || {}} receitas={receitas}
+          carrinho={sem.compras_acompanhamentos?.[d] || {}}
+          marcar={(item, itens) => acoes.marcarAcomp(d, item, itens)}
           editar={() => ir.acompanhamentos(d, { editando: true })} />
       )}
       <p className="nota">Receitas sugeridas para 4 pessoas — ajuste ao gosto da casa.</p>
@@ -82,7 +85,8 @@ export default function Receita() {
 }
 
 /** Acompanhamentos do dia: cada um com a própria receita (ingredientes e preparo) */
-function AcompanhamentosDoDia({ ids, itens, receitas, editar }) {
+function AcompanhamentosDoDia({ dia, ids, itens, receitas, carrinho, marcar, editar }) {
+  const [repetindo, setRepetindo] = useState(null);
   return (
     <section aria-labelledby="acomp-titulo">
       <h2 className="secao" id="acomp-titulo">Acompanhamentos</h2>
@@ -96,16 +100,35 @@ function AcompanhamentosDoDia({ ids, itens, receitas, editar }) {
               <span className="acomp-meta">{r.tempo} · {r.ingredientes.length} ingredientes</span>
             </summary>
             {it.descricao && <p className="descricao" style={{ fontSize: 16 }}>{it.descricao}</p>}
-            <h3 className="acomp-sub">Ingredientes</h3>
-            <ul className="lista-simples">{r.ingredientes.map((x, k) => <li key={k}>{x}</li>)}</ul>
+            <div className="cabeca-lista" style={{ marginTop: 12 }}>
+              <h3 className="acomp-sub" style={{ margin: 0 }}>Ingredientes</h3>
+              <span>{(carrinho[id] || []).length} de {r.ingredientes.length} no carrinho</span>
+            </div>
+            <ul className="ingredientes">
+              {r.ingredientes.map((x, k) => {
+                const m = carrinho[id] || [], on = m.includes(k);
+                return (
+                  <li key={k}>
+                    <button className="ingrediente" aria-pressed={on}
+                      onClick={() => marcar(id, on ? m.filter((y) => y !== k) : [...m, k].sort((a, b) => a - b))}>
+                      <span className="caixa"><IcCheck /></span><span>{x}</span>
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
             <h3 className="acomp-sub">Modo de preparo</h3>
             <ol className="passos">{r.preparo.map((x, k) => <li key={k}><span>{x}</span></li>)}</ol>
+            <div className="acoes-lista" style={{ margin: "4px 0 16px" }}>
+              <button className="botao contorno" onClick={() => setRepetindo(id)}>Repetir em outros dias</button>
+            </div>
           </details>
         );
       })}
       <div className="acoes-lista">
         <button className="botao contorno" onClick={editar}>{ids.length ? "Adicionar ou remover acompanhamentos" : "Adicionar acompanhamentos"}</button>
       </div>
+      {repetindo && <Repetir item={repetindo} nome={itens[repetindo].nome} diaAtual={dia} fechar={() => setRepetindo(null)} />}
     </section>
   );
 }
