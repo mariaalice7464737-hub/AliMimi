@@ -3,7 +3,7 @@ import { Navigate, useParams, useSearchParams } from "react-router-dom";
 import Tela from "../componentes/Tela";
 import { IcCheck, IcCopiar } from "../componentes/Ilustracoes";
 import { useAviso, useCardapio, useSemana } from "../estado";
-import { DIAS, nomeDia, pratoDoDia, proximoComPrato } from "../lib/dias";
+import { DIAS, acompanhamentosDoDia, nomeDia, pratoDoDia, proximoComPrato } from "../lib/dias";
 import { copiar } from "../lib/copiar";
 import { useIr } from "../navegar";
 
@@ -12,7 +12,7 @@ import { useIr } from "../navegar";
 export default function Receita() {
   const d = Number(useParams().dia);
   const [params] = useSearchParams();
-  const { pratos, receitas } = useCardapio();
+  const { pratos, receitas, acompanhamentos } = useCardapio();
   const { sem, acoes } = useSemana();
   const avisar = useAviso();
   const ir = useIr();
@@ -71,7 +71,41 @@ export default function Receita() {
         <h2 className="secao">Modo de preparo</h2>
         <ol className="passos">{r.preparo.map((s, k) => <li key={k}><span>{s}</span></li>)}</ol>
       </>}
+      {(ir.temAcompanhamentos() || acompanhamentosDoDia(sem, d).length > 0) && (
+        <AcompanhamentosDoDia ids={acompanhamentosDoDia(sem, d).filter((a) => acompanhamentos?.itens?.[a])}
+          itens={acompanhamentos?.itens || {}} receitas={receitas}
+          editar={() => ir.acompanhamentos(d, { editando: true })} />
+      )}
       <p className="nota">Receitas sugeridas para 4 pessoas — ajuste ao gosto da casa.</p>
     </Tela>
+  );
+}
+
+/** Acompanhamentos do dia: cada um com a própria receita (ingredientes e preparo) */
+function AcompanhamentosDoDia({ ids, itens, receitas, editar }) {
+  return (
+    <section aria-labelledby="acomp-titulo">
+      <h2 className="secao" id="acomp-titulo">Acompanhamentos</h2>
+      {ids.length === 0 && <p className="nota" style={{ marginTop: 0 }}>Nenhum acompanhamento neste dia.</p>}
+      {ids.map((id) => {
+        const it = itens[id], r = receitas[id];
+        return (
+          <details key={id} className="acomp-receita">
+            <summary>
+              <span className="acomp-nome">{it.nome}</span>
+              <span className="acomp-meta">{r.tempo} · {r.ingredientes.length} ingredientes</span>
+            </summary>
+            {it.descricao && <p className="descricao" style={{ fontSize: 16 }}>{it.descricao}</p>}
+            <h3 className="acomp-sub">Ingredientes</h3>
+            <ul className="lista-simples">{r.ingredientes.map((x, k) => <li key={k}>{x}</li>)}</ul>
+            <h3 className="acomp-sub">Modo de preparo</h3>
+            <ol className="passos">{r.preparo.map((x, k) => <li key={k}><span>{x}</span></li>)}</ol>
+          </details>
+        );
+      })}
+      <div className="acoes-lista">
+        <button className="botao contorno" onClick={editar}>{ids.length ? "Adicionar ou remover acompanhamentos" : "Adicionar acompanhamentos"}</button>
+      </div>
+    </section>
   );
 }

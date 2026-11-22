@@ -6,6 +6,7 @@
   PUT    /api/familias/{codigo}/dias/{dia}     escolhe o prato ou pula o dia (0 = segunda)
   DELETE /api/familias/{codigo}/dias/{dia}     volta o dia para "sem prato"
   PUT    /api/familias/{codigo}/compras/{dia}  ingredientes já no carrinho
+  PUT    /api/familias/{codigo}/dias/{dia}/acompanhamentos  acompanhamentos do dia (zero ou mais)
   PUT    /api/familias/{codigo}/semana         substitui a semana inteira (Recomeçar / Desfazer)
 
 Em produção o mesmo servidor entrega o front já compilado (frontend/dist).
@@ -39,12 +40,27 @@ class Dia(BaseModel):
         return self
 
 
+class DiaSemana(Dia):
+    """Dia dentro da semana inteira (Recomeçar / Desfazer): pode levar acompanhamentos."""
+    acompanhamentos: list[str] = []
+
+    @model_validator(mode="after")
+    def so_com_prato(self):
+        if self.acompanhamentos and not self.prato_id:
+            raise ValueError("dia pulado não tem acompanhamentos")
+        return self
+
+
+class Acompanhamentos(BaseModel):
+    itens: list[str]
+
+
 class Compras(BaseModel):
     itens: list[int]
 
 
 class Semana(BaseModel):
-    dias: dict[int, Dia] = {}
+    dias: dict[int, DiaSemana] = {}
     compras: dict[int, list[int]] = {}
 
     @model_validator(mode="after")
@@ -66,7 +82,16 @@ def _checar_itens(prato_id: str, itens: list[int]):
         raise ValueError(f"ingrediente fora da lista (0 a {total - 1})")
 
 
-def criar_app(caminho_db: str | None = None, pasta_front: str | None = None) -> FastAPI:
+def criar_app(caminho_db: str | None = None, pasta_front: str | None = None, acompanhamentos: str | None = None) -> FastAPI:
+    """acompanhamentos: arquivo do catálogo de acompanhamentos (padrão: app/dados/acompanhamentos.json)."""
+    cat = cardapio.carregar(acompanhamentos)
+    itens_acomp = cat["acompanhamentos"]["itens"]
+
+    def checar_acompanhamentos(itens: list[str]):
+        desconhecidos = [i for i in itens if i not in itens_acomp]
+        if desconhecidos:
+            raise HTTPException(422, f"acompanhamento desconhecido: {', '.join(desconhecidos)}")
+
     # Postgres se houver DATABASE_URL (produção); senão, arquivo SQLite local
     banco = Banco(caminho_db or os.environ.get("DATABASE_URL") or os.environ.get("ALIMIMI_DB", str(AQUI.parent / "alimimi.db")))
 
@@ -89,7 +114,7 @@ def criar_app(caminho_db: str | None = None, pasta_front: str | None = None) -> 
 
     @app.get("/api/cardapio")
     def get_cardapio():
-        return cardapio.carregar()
+        return cat
 
     @app.post("/api/familias", status_code=201)
     def criar_familia():
@@ -103,6 +128,15 @@ def criar_app(caminho_db: str | None = None, pasta_front: str | None = None) -> 
     def put_dia(codigo: str, corpo: Dia, dia: int = DIA):
         c = familia(codigo)
         banco.definir_dia(c, dia, corpo.prato_id, corpo.pulado)
+        return banco.semana(c)
+
+    @app.put("/api/familias/{codigo}/dias/{dia}/acompanhamentos")
+    def put_acompanhamentos(codigo: str, corpo: Acompanhamentos, dia: int = DIA):
+        c = familia(codigo)
+        if not banco.prato_do_dia(c, dia):
+            raise HTTPException(409, "Escolha a proteína do dia antes dos acompanhamentos.")
+        checar_acompanhamentos(corpo.itens)
+        banco.definir_acompanhamentos(c, dia, corpo.itens)
         return banco.semana(c)
 
     @app.delete("/api/familias/{codigo}/dias/{dia}")
@@ -127,6 +161,8 @@ def criar_app(caminho_db: str | None = None, pasta_front: str | None = None) -> 
     @app.put("/api/familias/{codigo}/semana")
     def put_semana(codigo: str, corpo: Semana):
         c = familia(codigo)
+        for v in corpo.dias.values():
+            checar_acompanhamentos(v.acompanhamentos)
         dias = {str(d): v.model_dump(exclude_none=True, exclude_defaults=True) or {"pulado": True} for d, v in corpo.dias.items()}
         banco.substituir_semana(c, dias, {str(d): i for d, i in corpo.compras.items()})
         return banco.semana(c)

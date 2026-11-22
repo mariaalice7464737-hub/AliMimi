@@ -1,7 +1,7 @@
 import { Navigate, useLocation, useParams } from "react-router-dom";
 import Tela from "../componentes/Tela";
 import { useCardapio, useSemana } from "../estado";
-import { DIAS, escolhidos, nomeDia, pulado } from "../lib/dias";
+import { DIAS, acompanhamentosDoDia, escolhidos, nomeDia, pulado } from "../lib/dias";
 import { useIr } from "../navegar";
 
 export default function Categorias() {
@@ -17,6 +17,8 @@ export default function Categorias() {
   const flash = state?.flash;
 
   function pular() {
+    const n = acompanhamentosDoDia(sem, d).length;
+    if (n && !window.confirm(`Pular ${DIAS[d].toLowerCase()} tira o almoço desse dia, inclusive ${n === 1 ? "o acompanhamento escolhido" : `os ${n} acompanhamentos escolhidos`}. Continuar?`)) return;
     acoes.pular(d);
     ir.avancar({ ...sem, dias: { ...sem.dias, [d]: { pulado: true } } }, d, editando, `${DIAS[d]} pulado`);
   }

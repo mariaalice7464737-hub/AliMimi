@@ -84,6 +84,7 @@ Depois disso, todo push no `main` atualiza o app sozinho. As tabelas são criada
 | PUT | `/api/familias/{codigo}/dias/{dia}` | `{"prato_id": "carne0"}` ou `{"pulado": true}` (dia 0 = segunda) |
 | DELETE | `/api/familias/{codigo}/dias/{dia}` | volta o dia para "sem prato" |
 | PUT | `/api/familias/{codigo}/compras/{dia}` | `{"itens": [0, 2]}`: ingredientes já no carrinho |
+| PUT | `/api/familias/{codigo}/dias/{dia}/acompanhamentos` | `{"itens": ["acomp0"]}`: acompanhamentos do dia (exige proteína) |
 | PUT | `/api/familias/{codigo}/semana` | substitui a semana inteira (Recomeçar / Desfazer) |
 
 A documentação interativa fica em http://localhost:8000/docs.
@@ -100,11 +101,27 @@ TEST_DATABASE_URL=postgresql://usuario:senha@localhost:5432/teste python -m pyte
 
 No GitHub, o Actions (`.github/workflows/testes.yml`) roda os testes do back no SQLite e no Postgres, e o build do front, a cada pull request e a cada push no `main`.
 
+## Acompanhamentos
+
+Cada dia tem **exatamente uma proteína** (pratos de `pratos.json`) e **zero ou mais acompanhamentos**, em três grupos: Acompanhamentos, Leguminosas e vegetais, Saladas.
+
+- Catálogo: `backend/app/dados/acompanhamentos.json`. **Está vazio de propósito**: as 58 receitas do PDF não têm ingredientes, quantidades nem modo de preparo. Enquanto estiver vazio, o app funciona exatamente como antes (a etapa "O que vai acompanhar?" não aparece).
+- Um item só entra no app se a receita estiver **completa**: `tempo`, `porcoes`, `ingredientes`, `preparo` e `compras` (cada item com `nome`, `secao` válida e, se tiver `qtd`, `unidade`). Item incompleto fica de fora e aparece no log — nunca gera lista de compras errada.
+- Ids novos não podem repetir os dos pratos; foto em `backend/app/static/img/<id>.jpg` (opcional).
+- Formato de um item (dentro de `grupos[].itens`):
+  ```json
+  { "id": "acomp0", "nome": "…", "descricao": "…",
+    "receita": { "tempo": "25 min", "porcoes": 4, "ingredientes": ["…"], "preparo": ["…"],
+                 "compras": [{ "qtd": 2, "unidade": "xícara", "nome": "Arroz", "secao": "Mercearia" }] } }
+  ```
+- Exemplo completo (fictício, só para testes): `backend/tests/dados/acompanhamentos_teste.json`. Para ver a etapa no computador: `ALIMIMI_ACOMPANHAMENTOS=tests/dados/acompanhamentos_teste.json uvicorn app.main:app --reload`.
+- Banco: tabela nova `acompanhamentos`; semanas antigas não têm linhas nela e carregam com a lista vazia (sem migração). Trocar a proteína mantém os acompanhamentos; pular o dia os retira.
+
 ## Onde mexer
 
 - **Pratos e receitas:** `backend/app/dados/pratos.json` e `receitas.json`; fotos em `backend/app/static/img/<id>.jpg`.
 - **Categoria "Massas", ordem e capas:** topo de `backend/app/cardapio.py`.
-- **Telas:** `frontend/src/telas/` (Inicio, Cardapio, Categorias, Pratos, Receita).
+- **Telas:** `frontend/src/telas/` (Inicio, Cardapio, Categorias, Pratos, Acompanhamentos, Receita).
 - **Lista somada e PDFs:** `frontend/src/lib/lista.js` e `frontend/src/lib/pdf.js`.
 - **Cores, tipografia e espaçamentos:** tokens no topo de `frontend/src/estilo.css`.
 - **Ilustrações e ícones (SVG):** `frontend/src/componentes/Ilustracoes.jsx`.

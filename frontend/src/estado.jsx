@@ -78,10 +78,16 @@ export function useSemanaRemota(codigo) {
   }, [avisar, buscar]);
 
   const acoes = {
+    /* trocar a proteína mantém os acompanhamentos do dia (o servidor faz o mesmo) */
     escolher: (dia, pratoId) => mudar((s) => {
       if (s.dias[dia]?.prato_id !== pratoId) delete s.compras[dia];
-      s.dias[dia] = { prato_id: pratoId }; return s;
+      const acomp = s.dias[dia]?.prato_id ? s.dias[dia].acompanhamentos : undefined;
+      s.dias[dia] = acomp?.length ? { prato_id: pratoId, acompanhamentos: acomp } : { prato_id: pratoId }; return s;
     }, () => api.escolher(codigo, dia, pratoId)),
+    acompanhamentos: (dia, itens) => mudar((s) => {
+      const unicos = [...new Set(itens)];
+      s.dias[dia] = unicos.length ? { ...s.dias[dia], acompanhamentos: unicos } : { prato_id: s.dias[dia].prato_id }; return s;
+    }, () => api.acompanhamentos(codigo, dia, itens)),
     pular: (dia) => mudar((s) => { delete s.compras[dia]; s.dias[dia] = { pulado: true }; return s; }, () => api.pular(codigo, dia)),
     marcar: (dia, itens) => mudar((s) => { s.compras[dia] = itens; return s; }, () => api.compras(codigo, dia, itens)),
     substituir: (nova) => mudar(() => structuredClone({ ...sem, dias: nova.dias, compras: nova.compras }), () => api.substituir(codigo, nova)),
