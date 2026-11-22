@@ -5,6 +5,7 @@ services:
     name: alimimi
     runtime: docker
     plan: free
+    region: virginia   # perto do banco no Neon (AWS US East 1)
     healthCheckPath: /api/saude
     envVars:
       - key: DATABASE_URL

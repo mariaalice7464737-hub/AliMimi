@@ -61,7 +61,7 @@ O Render gratuito apaga os arquivos do servidor sempre que ele reinicia ou "dorm
 
 **1. Banco no Neon** (uns 2 minutos)
 1. Crie uma conta em https://neon.com (dá para entrar com o GitHub).
-2. Crie um projeto chamado `alimimi`, com a região mais perto (ex.: São Paulo, se aparecer; senão, `US East`).
+2. Crie um projeto chamado `alimimi` na região **AWS US East 1 (N. Virginia)**, a mesma do Render (`region: virginia` no `render.yaml`). O Render não tem servidor no Brasil, e banco longe do servidor deixa cada requisição lenta.
 3. Na tela do projeto, clique em **Connect** e copie a *connection string*. Ela começa com `postgresql://` e termina com `?sslmode=require`.
 
 **2. App no Render**
