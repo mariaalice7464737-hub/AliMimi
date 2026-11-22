@@ -34,7 +34,7 @@ jobs:
       - run: python -m pytest -v
 
   front:
-    name: Front (build)
+    name: Front (testes da lista e build)
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -47,6 +47,7 @@ jobs:
           cache: npm
           cache-dependency-path: frontend/package-lock.json
       - run: npm ci
+      - run: npm test
       - run: npm run build
 
   docker:

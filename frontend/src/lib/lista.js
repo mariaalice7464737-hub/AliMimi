@@ -29,7 +29,22 @@ const EMBALAGEM = {
   "Amêndoas ou pinoles": "1 pacote pequeno", "Alho (para o molho)": "1 cabeça", "Queijo ralado": "1 pacote",
 };
 
-/** @param pratosIds ids dos pratos da semana  @param receitas mapa id → receita */
+/**
+ * Receitas que entram na lista da semana: de cada dia com almoço, a proteína e os acompanhamentos.
+ * Uma receita repetida em vários dias entra uma vez por dia (as quantidades somam).
+ * Só entra o que tem receita no cardápio (receita incompleta nunca chega aqui).
+ */
+export function receitasDaSemana(sem, receitas) {
+  const ids = [];
+  for (let i = 0; i < 7; i++) {
+    const d = sem.dias[i];
+    if (!d?.prato_id) continue;
+    for (const id of [d.prato_id, ...(d.acompanhamentos || [])]) if (receitas[id]) ids.push(id);
+  }
+  return ids;
+}
+
+/** @param pratosIds ids das receitas da semana (com repetição)  @param receitas mapa id → receita */
 export function listaDaSemana(pratosIds, receitas) {
   const m = {};
   pratosIds.forEach((id) => {

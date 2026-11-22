@@ -1,6 +1,10 @@
 /* PDFs da semana (gerados no celular). O jsPDF só é baixado quando a pessoa toca em "Baixar". */
 import { DIAS, CURTO } from "./dias";
-import { listaDaSemana } from "./lista";
+import { listaDaSemana, receitasDaSemana } from "./lista";
+
+/** acompanhamentos do dia que existem no cardápio (com receita) */
+const acompDoDia = (sem, i, acomp, receitas) =>
+  (sem.dias[i].acompanhamentos || []).filter((id) => acomp?.itens?.[id] && receitas[id]);
 
 const VERMELHO = [165, 72, 55] /* terracota */, TINTA = [33, 28, 24], CINZA = [109, 99, 91], LINHA = [228, 222, 214];
 // a fonte padrão do jsPDF não tem travessão, bolinha nem ≈
@@ -26,14 +30,18 @@ async function comoDataUrl(url) {
 }
 
 /** dias: índices dos dias com prato; sem: semana; cardapio: {pratos, receitas} */
-export async function pdfLista(dias, sem, { pratos, receitas }) {
+export async function pdfLista(dias, sem, { pratos, receitas, acompanhamentos }) {
   const doc = await novoDoc();
   faixa(doc, "Lista de supermercado", `Almoço da semana - ${dias.length} ${dias.length === 1 ? "prato" : "pratos"} (${semanaCurta(dias)})`);
   let y = 44; doc.setTextColor(...CINZA); doc.setFontSize(10);
-  dias.forEach((i) => { doc.text(ascii(`${DIAS[i]}: ${pratos[sem.dias[i].prato_id].nome}`), 16, y); y += 5; });
+  dias.forEach((i) => {
+    const extras = acompDoDia(sem, i, acompanhamentos, receitas).map((id) => acompanhamentos.itens[id].nome);
+    const linha = doc.splitTextToSize(ascii(`${DIAS[i]}: ${pratos[sem.dias[i].prato_id].nome}${extras.length ? " + " + extras.join(", ") : ""}`), 178);
+    doc.text(linha, 16, y); y += linha.length * 5;
+  });
   y += 4;
   const pagina = () => { if (y > 280) { doc.addPage(); y = 18; } };
-  listaDaSemana(dias.map((i) => sem.dias[i].prato_id), receitas).forEach((g) => {
+  listaDaSemana(receitasDaSemana(sem, receitas), receitas).forEach((g) => {
     if (y > 262) { doc.addPage(); y = 18; }
     doc.setTextColor(...VERMELHO); doc.setFont("helvetica", "bold"); doc.setFontSize(13); doc.text(ascii(g.secao), 16, y); y += 2;
     doc.setDrawColor(...VERMELHO); doc.setLineWidth(0.4); doc.line(16, y, 194, y); y += 6;
@@ -53,7 +61,7 @@ export async function pdfLista(dias, sem, { pratos, receitas }) {
   return doc.output("blob");
 }
 
-export async function pdfCardapio(dias, sem, { pratos, receitas }) {
+export async function pdfCardapio(dias, sem, { pratos, receitas, acompanhamentos }) {
   const doc = await novoDoc();
   const fotos = Object.fromEntries(await Promise.all(dias.map(async (i) => {
     const p = pratos[sem.dias[i].prato_id]; return [p.id, await comoDataUrl(p.img)];
@@ -82,6 +90,11 @@ export async function pdfCardapio(dias, sem, { pratos, receitas }) {
     doc.setFont("helvetica", "normal"); doc.setFontSize(10.5); doc.setTextColor(...CINZA);
     const d = doc.splitTextToSize(ascii(it.descricao), 128); doc.text(d, 16, y); y += d.length * 5 + 2;
     if (r) { doc.setFont("helvetica", "bold"); doc.setTextColor(...TINTA); doc.text(ascii(`${r.porcoes} porções  -  ${r.tempo}`), 16, y); }
+    const extras = acompDoDia(sem, i, acompanhamentos, receitas);
+    if (extras.length) {
+      y += 6; doc.setFont("helvetica", "normal"); doc.setFontSize(10.5); doc.setTextColor(...TINTA);
+      extras.forEach((id) => { const l = doc.splitTextToSize(ascii("+ " + acompanhamentos.itens[id].nome), 128); doc.text(l, 16, y); y += l.length * 5; });
+    }
     y = Math.max(y + 10, topo + 46);
     if (!r) return;
     const titulo = (txt) => {
@@ -100,6 +113,25 @@ export async function pdfCardapio(dias, sem, { pratos, receitas }) {
       doc.setFillColor(...VERMELHO); doc.circle(19, y - 1.3, 3.2, "F"); doc.setTextColor(255, 255, 255);
       doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.text(String(k + 1), 19, y, { align: "center" });
       doc.setTextColor(...TINTA); doc.setFont("helvetica", "normal"); doc.setFontSize(11); doc.text(l, 26, y); y += l.length * 5 + 3.5;
+    });
+    extras.forEach((id) => {
+      const ra = receitas[id];
+      y += 6; cabe(24);
+      doc.setTextColor(...CINZA); doc.setFont("helvetica", "bold"); doc.setFontSize(9); doc.text("ACOMPANHAMENTO", 16, y); y += 6;
+      doc.setTextColor(...TINTA); doc.setFontSize(14);
+      const t = doc.splitTextToSize(ascii(acompanhamentos.itens[id].nome), 178); doc.text(t, 16, y); y += t.length * 6;
+      doc.setFont("helvetica", "normal"); doc.setFontSize(10); doc.setTextColor(...CINZA); doc.text(ascii(`${ra.porcoes} porções  -  ${ra.tempo}`), 16, y); y += 7;
+      ra.ingredientes.forEach((x) => {
+        doc.setFontSize(11); const l = doc.splitTextToSize(ascii(x), 168); cabe(l.length * 5 + 2);
+        doc.setDrawColor(...CINZA); doc.setLineWidth(0.3); doc.rect(16, y - 3.6, 4, 4);
+        doc.setTextColor(...TINTA); doc.setFont("helvetica", "normal"); doc.text(l, 24, y); y += l.length * 5 + 1.6;
+      });
+      y += 3;
+      ra.preparo.forEach((x, k) => {
+        doc.setFontSize(11); const l = doc.splitTextToSize(ascii(x), 164); cabe(l.length * 5 + 3);
+        doc.setTextColor(...VERMELHO); doc.setFont("helvetica", "bold"); doc.text(`${k + 1}.`, 17, y);
+        doc.setTextColor(...TINTA); doc.setFont("helvetica", "normal"); doc.text(l, 26, y); y += l.length * 5 + 3;
+      });
     });
     y += 14;
   });

@@ -5,7 +5,7 @@ import { IcBaixar, IcCarrinho, IcCopiar, IcLista, IcLivro, MesaPosta, Ramo } fro
 import { useAviso, useCardapio, useSemana } from "../estado";
 import { DIAS, SEMANA, escolhidos, proximoAberto } from "../lib/dias";
 import { copiar } from "../lib/copiar";
-import { listaComoTexto, listaDaSemana } from "../lib/lista";
+import { listaComoTexto, listaDaSemana, receitasDaSemana } from "../lib/lista";
 import { pdfCardapio, pdfLista, salvarArquivo } from "../lib/pdf";
 import { useIr } from "../navegar";
 
@@ -30,7 +30,7 @@ export default function Cardapio() {
   const fecharJanela = () => (state?.abriuJanela ? nav(-1) : setParams({}, { replace: true }));
 
   function recomecar() {
-    const copia = { dias: sem.dias, compras: sem.compras };
+    const copia = { dias: sem.dias, compras: sem.compras, compras_acompanhamentos: sem.compras_acompanhamentos || {} };
     acoes.substituir({ dias: {}, compras: {} });
     avisar("Semana apagada", { rotulo: "Desfazer", fazer: () => acoes.substituir(copia) });
   }
@@ -43,7 +43,7 @@ export default function Cardapio() {
   }
 
   const copiarSemana = () =>
-    copiar(listaComoTexto(listaDaSemana(dias.map((i) => sem.dias[i].prato_id), receitas)), "Lista da semana copiada", avisar);
+    copiar(listaComoTexto(listaDaSemana(receitasDaSemana(sem, receitas), receitas)), "Lista da semana copiada", avisar);
 
   return (
     <Tela dia={null} voltarPara={false}

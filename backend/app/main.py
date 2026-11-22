@@ -7,6 +7,8 @@
   DELETE /api/familias/{codigo}/dias/{dia}     volta o dia para "sem prato"
   PUT    /api/familias/{codigo}/compras/{dia}  ingredientes já no carrinho
   PUT    /api/familias/{codigo}/dias/{dia}/acompanhamentos  acompanhamentos do dia (zero ou mais)
+  PUT    /api/familias/{codigo}/compras/{dia}/acompanhamentos/{item}  carrinho de um acompanhamento do dia
+  POST   /api/familias/{codigo}/acompanhamentos/repetir  repete um acompanhamento em outros dias
   PUT    /api/familias/{codigo}/semana         substitui a semana inteira (Recomeçar / Desfazer)
 
 Em produção o mesmo servidor entrega o front já compilado (frontend/dist).
@@ -59,9 +61,15 @@ class Compras(BaseModel):
     itens: list[int]
 
 
+class Repetir(BaseModel):
+    item_id: str
+    dias: list[int]
+
+
 class Semana(BaseModel):
     dias: dict[int, DiaSemana] = {}
     compras: dict[int, list[int]] = {}
+    compras_acompanhamentos: dict[int, dict[str, list[int]]] = {}
 
     @model_validator(mode="after")
     def coerente(self):
@@ -73,6 +81,11 @@ class Semana(BaseModel):
             if not dia or not dia.prato_id:
                 raise ValueError(f"compras no dia {d}, que não tem prato")
             _checar_itens(dia.prato_id, itens)
+        for d, por_item in self.compras_acompanhamentos.items():
+            dia = self.dias.get(d)
+            for item in por_item:
+                if not dia or item not in dia.acompanhamentos:
+                    raise ValueError(f"carrinho de '{item}' no dia {d}, que não tem esse acompanhamento")
         return self
 
 
@@ -86,6 +99,11 @@ def criar_app(caminho_db: str | None = None, pasta_front: str | None = None, aco
     """acompanhamentos: arquivo do catálogo de acompanhamentos (padrão: app/dados/acompanhamentos.json)."""
     cat = cardapio.carregar(acompanhamentos)
     itens_acomp = cat["acompanhamentos"]["itens"]
+
+    def checar_carrinho_acomp(item: str, itens: list[int]):
+        total = len(cat["receitas"][item]["ingredientes"])
+        if any(not 0 <= i < total for i in itens):
+            raise HTTPException(422, f"ingrediente fora da lista (0 a {total - 1})")
 
     def checar_acompanhamentos(itens: list[str]):
         desconhecidos = [i for i in itens if i not in itens_acomp]
@@ -139,6 +157,24 @@ def criar_app(caminho_db: str | None = None, pasta_front: str | None = None, aco
         banco.definir_acompanhamentos(c, dia, corpo.itens)
         return banco.semana(c)
 
+    @app.put("/api/familias/{codigo}/compras/{dia}/acompanhamentos/{item}")
+    def put_compras_acompanhamento(codigo: str, item: str, corpo: Compras, dia: int = DIA):
+        c = familia(codigo)
+        if item not in banco.acompanhamentos_do_dia(c, dia):
+            raise HTTPException(409, "Esse acompanhamento não está nesse dia.")
+        checar_carrinho_acomp(item, corpo.itens)
+        banco.definir_compras_acompanhamento(c, dia, item, corpo.itens)
+        return banco.semana(c)
+
+    @app.post("/api/familias/{codigo}/acompanhamentos/repetir")
+    def repetir(codigo: str, corpo: Repetir):
+        c = familia(codigo)
+        checar_acompanhamentos([corpo.item_id])
+        if any(not 0 <= d <= 6 for d in corpo.dias):
+            raise HTTPException(422, "dia inválido")
+        aplicados, ignorados = banco.repetir_acompanhamento(c, corpo.item_id, corpo.dias)
+        return {**banco.semana(c), "repeticao": {"aplicado": aplicados, "ignorado": ignorados}}
+
     @app.delete("/api/familias/{codigo}/dias/{dia}")
     def delete_dia(codigo: str, dia: int = DIA):
         c = familia(codigo)
@@ -163,8 +199,12 @@ def criar_app(caminho_db: str | None = None, pasta_front: str | None = None, aco
         c = familia(codigo)
         for v in corpo.dias.values():
             checar_acompanhamentos(v.acompanhamentos)
+        for d, por_item in corpo.compras_acompanhamentos.items():
+            for item, itens in por_item.items():
+                checar_carrinho_acomp(item, itens)
         dias = {str(d): v.model_dump(exclude_none=True, exclude_defaults=True) or {"pulado": True} for d, v in corpo.dias.items()}
-        banco.substituir_semana(c, dias, {str(d): i for d, i in corpo.compras.items()})
+        banco.substituir_semana(c, dias, {str(d): i for d, i in corpo.compras.items()},
+                                {str(d): v for d, v in corpo.compras_acompanhamentos.items()})
         return banco.semana(c)
 
     # Fotos dos pratos

@@ -23,5 +23,7 @@ export const api = {
   pular: (c, dia) => req("PUT", `${fam(c)}/dias/${dia}`, { pulado: true }),
   compras: (c, dia, itens) => req("PUT", `${fam(c)}/compras/${dia}`, { itens }),
   acompanhamentos: (c, dia, itens) => req("PUT", `${fam(c)}/dias/${dia}/acompanhamentos`, { itens }),
-  substituir: (c, sem) => req("PUT", `${fam(c)}/semana`, { dias: sem.dias, compras: sem.compras }),
+  comprasAcomp: (c, dia, item, itens) => req("PUT", `${fam(c)}/compras/${dia}/acompanhamentos/${encodeURIComponent(item)}`, { itens }),
+  repetir: (c, item, dias) => req("POST", `${fam(c)}/acompanhamentos/repetir`, { item_id: item, dias }),
+  substituir: (c, sem) => req("PUT", `${fam(c)}/semana`, { dias: sem.dias, compras: sem.compras, compras_acompanhamentos: sem.compras_acompanhamentos || {} }),
 };

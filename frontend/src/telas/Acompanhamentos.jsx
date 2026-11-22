@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Navigate, useLocation, useNavigate, useParams, useSearchParams } from "react-router-dom";
 import Tela from "../componentes/Tela";
+import Repetir from "../componentes/Repetir";
 import { IcCheck, IcRelogio, Ramo } from "../componentes/Ilustracoes";
 import { useCardapio, useSemana } from "../estado";
 import { DIAS, acompanhamentosDoDia, nomeDia, pratoDoDia, proximoAberto } from "../lib/dias";
@@ -20,6 +21,7 @@ export default function Acompanhamentos() {
   const { sem, acoes } = useSemana();
   const ir = useIr();
   const [sel, setSel] = useState(() => acompanhamentosDoDia(sem, d));
+  const [repetindo, setRepetindo] = useState(null);
   const pratoId = pratoDoDia(sem, d);
   if (!(d >= 0 && d <= 6)) return <Navigate to={ir.base} replace />;
   if (!pratoId) return <Navigate to={`${ir.base}/dia/${d}`} replace />;
@@ -71,7 +73,11 @@ export default function Acompanhamentos() {
                 <ul className="revisao-lista">
                   {doGrupo.map((id) => (
                     <li key={id}><span>+ {itens[id].nome}</span>
-                      <button className="link" onClick={() => alternar(id)} aria-label={`Remover ${itens[id].nome}`}>Remover</button></li>
+                      <span className="revisao-acoes">
+                        <button className="link" onClick={() => { acoes.acompanhamentos(d, sel); setRepetindo(id); }}
+                          aria-label={`Repetir ${itens[id].nome} em outros dias`}>Repetir</button>
+                        <button className="link" onClick={() => alternar(id)} aria-label={`Remover ${itens[id].nome}`}>Remover</button>
+                      </span></li>
                   ))}
                 </ul>
               )}
@@ -81,6 +87,7 @@ export default function Acompanhamentos() {
         <div className="acoes-lista">
           <button className="botao contorno" onClick={voltarEscolha}>Adicionar ou remover acompanhamentos</button>
         </div>
+        {repetindo && <Repetir item={repetindo} nome={itens[repetindo].nome} diaAtual={d} fechar={() => setRepetindo(null)} />}
       </Tela>
     );
   }

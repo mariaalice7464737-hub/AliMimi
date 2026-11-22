@@ -24,7 +24,7 @@ def api(request, tmp_path):
     if request.param == "postgres":
         import psycopg
         with psycopg.connect(PG, autocommit=True) as c:
-            c.execute("DROP TABLE IF EXISTS acompanhamentos, compras, dias, familias")
+            c.execute("DROP TABLE IF EXISTS compras_acompanhamentos, acompanhamentos, compras, dias, familias")
         endereco = PG
     else:
         endereco = str(tmp_path / "teste.db")
