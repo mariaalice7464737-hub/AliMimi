@@ -8,6 +8,7 @@ import Cardapio from "./telas/Cardapio";
 import Categorias from "./telas/Categorias";
 import Pratos from "./telas/Pratos";
 import Receita from "./telas/Receita";
+import Acompanhamentos from "./telas/Acompanhamentos";
 /* fontes embutidas no app (sem depender do Google Fonts); só o subconjunto latino, que cobre o português */
 import "@fontsource/playfair-display/latin-400.css";
 import "@fontsource/playfair-display/latin-500.css";
@@ -25,6 +26,7 @@ import "./estilo.css";
   /f/:codigo                Cardápio da semana (tela central)
   /f/:codigo/dia/:dia       qual a proteína do dia?
   /f/:codigo/dia/:dia/:cat  escolha o prato
+  /f/:codigo/dia/:dia/acompanhamentos  o que vai acompanhar? (?revisar=1: revisão do almoço)
   /f/:codigo/receita/:dia   receita e supermercado do dia (?aba=mercado)
 */
 createRoot(document.getElementById("root")).render(
@@ -37,6 +39,7 @@ createRoot(document.getElementById("root")).render(
             <Route path="/f/:codigo" element={<Familia />}>
               <Route index element={<Cardapio />} />
               <Route path="dia/:dia" element={<Categorias />} />
+              <Route path="dia/:dia/acompanhamentos" element={<Acompanhamentos />} />
               <Route path="dia/:dia/:cat" element={<Pratos />} />
               <Route path="receita/:dia" element={<Receita />} />
             </Route>

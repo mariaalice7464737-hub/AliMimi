@@ -22,5 +22,6 @@ export const api = {
   escolher: (c, dia, pratoId) => req("PUT", `${fam(c)}/dias/${dia}`, { prato_id: pratoId }),
   pular: (c, dia) => req("PUT", `${fam(c)}/dias/${dia}`, { pulado: true }),
   compras: (c, dia, itens) => req("PUT", `${fam(c)}/compras/${dia}`, { itens }),
+  acompanhamentos: (c, dia, itens) => req("PUT", `${fam(c)}/dias/${dia}/acompanhamentos`, { itens }),
   substituir: (c, sem) => req("PUT", `${fam(c)}/semana`, { dias: sem.dias, compras: sem.compras }),
 };

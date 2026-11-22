@@ -10,5 +10,7 @@ export const pulado = (sem, i) => !!sem.dias[i]?.pulado;
 export const proximoAberto = (sem, de = 0) => SEMANA.find((i) => i >= de && !sem.dias[i]) ?? -1;
 /** próximo dia com prato a partir de `de` */
 export const proximoComPrato = (sem, de = 0) => SEMANA.find((i) => i >= de && pratoDoDia(sem, i)) ?? -1;
+/** acompanhamentos do dia (lista vazia em semanas antigas ou dias sem) */
+export const acompanhamentosDoDia = (sem, i) => sem.dias[i]?.acompanhamentos || [];
 /** dias que têm prato escolhido */
 export const escolhidos = (sem) => SEMANA.filter((i) => pratoDoDia(sem, i));

@@ -1,0 +1,54 @@
+{
+  "observacao": "SOMENTE PARA TESTES. Itens fictícios (nomes terminam com '(teste)'); não são receitas do PDF e não vão para produção.",
+  "grupos": [
+    { "id": "acompanhamentos", "itens": [
+      { "id": "t_arroz", "nome": "Arroz branco (teste)", "descricao": "Item fictício para testes.",
+        "receita": { "tempo": "25 min", "porcoes": 4,
+          "ingredientes": ["2 xícaras de arroz", "2 dentes de alho", "Óleo e sal"],
+          "preparo": ["Refogue o alho no óleo.", "Junte o arroz e a água; cozinhe até secar."],
+          "compras": [
+            { "qtd": 2, "unidade": "xícara", "nome": "Arroz", "secao": "Mercearia" },
+            { "qtd": 2, "unidade": "dente", "nome": "Alho", "secao": "Hortifrúti" },
+            { "qtd": null, "unidade": null, "nome": "Óleo", "secao": "Mercearia" },
+            { "qtd": null, "unidade": null, "nome": "Sal", "secao": "Temperos" } ] } },
+      { "id": "t_pure", "nome": "Purê de batata (teste)", "descricao": "Item fictício para testes.",
+        "receita": { "tempo": "35 min", "porcoes": 4,
+          "ingredientes": ["1 kg de batata", "2 colheres (sopa) de manteiga", "200 ml de leite"],
+          "preparo": ["Cozinhe as batatas.", "Amasse com manteiga e leite."],
+          "compras": [
+            { "qtd": 1000, "unidade": "g", "nome": "Batata", "secao": "Hortifrúti" },
+            { "qtd": 2, "unidade": "c. sopa", "nome": "Manteiga", "secao": "Frios e laticínios" },
+            { "qtd": 200, "unidade": "ml", "nome": "Leite", "secao": "Frios e laticínios" } ] } },
+      { "id": "t_incompleta", "nome": "Farofa (teste, incompleta)", "descricao": "Sem modo de preparo: deve ficar FORA do app.",
+        "receita": { "tempo": "10 min", "porcoes": 4, "ingredientes": ["Farinha de mandioca"], "preparo": [],
+          "compras": [ { "qtd": 250, "unidade": "g", "nome": "Farinha de mandioca", "secao": "Mercearia" } ] } }
+    ] },
+    { "id": "leguminosas", "itens": [
+      { "id": "t_feijao", "nome": "Feijão caseiro (teste)", "descricao": "Item fictício para testes.",
+        "receita": { "tempo": "1h", "porcoes": 4,
+          "ingredientes": ["500 g de feijão", "3 dentes de alho", "1 cebola"],
+          "preparo": ["Cozinhe o feijão na pressão.", "Refogue alho e cebola e junte ao feijão."],
+          "compras": [
+            { "qtd": 500, "unidade": "g", "nome": "Feijão", "secao": "Mercearia" },
+            { "qtd": 3, "unidade": "dente", "nome": "Alho", "secao": "Hortifrúti" },
+            { "qtd": 1, "unidade": "un", "nome": "Cebola", "secao": "Hortifrúti" } ] } },
+      { "id": "t_baiao", "nome": "Baião (teste)", "descricao": "Item fictício para testes (arroz em gramas: unidade incompatível com xícara).",
+        "receita": { "tempo": "40 min", "porcoes": 4,
+          "ingredientes": ["200 g de arroz", "300 g de feijão-de-corda"],
+          "preparo": ["Cozinhe o feijão.", "Junte o arroz e cozinhe até secar."],
+          "compras": [
+            { "qtd": 200, "unidade": "g", "nome": "Arroz", "secao": "Mercearia" },
+            { "qtd": 300, "unidade": "g", "nome": "Feijão-de-corda", "secao": "Mercearia" } ] } }
+    ] },
+    { "id": "saladas", "itens": [
+      { "id": "t_salada", "nome": "Salada verde (teste)", "descricao": "Item fictício para testes.",
+        "receita": { "tempo": "10 min", "porcoes": 4,
+          "ingredientes": ["1 pé de alface", "2 tomates", "Azeite e sal"],
+          "preparo": ["Lave as folhas.", "Corte os tomates e tempere na hora de servir."],
+          "compras": [
+            { "qtd": 1, "unidade": "pé", "nome": "Alface", "secao": "Hortifrúti" },
+            { "qtd": 2, "unidade": "un", "nome": "Tomate", "secao": "Hortifrúti" },
+            { "qtd": null, "unidade": null, "nome": "Azeite", "secao": "Mercearia" } ] } }
+    ] }
+  ]
+}

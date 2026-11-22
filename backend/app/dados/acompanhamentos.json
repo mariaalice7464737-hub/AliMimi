@@ -1,0 +1,8 @@
+{
+  "observacao": "Acompanhamentos, leguminosas/vegetais e saladas. Vazio de propósito: as 58 receitas do PDF 'Cozinha de Casa' não têm ingredientes, quantidades nem modo de preparo. Um item só aparece no app quando a receita estiver completa e validada (ver README, 'Acompanhamentos'). Inclusão prevista no PR 3.",
+  "grupos": [
+    { "id": "acompanhamentos", "nome": "Acompanhamentos", "itens": [] },
+    { "id": "leguminosas", "nome": "Leguminosas e vegetais", "itens": [] },
+    { "id": "saladas", "nome": "Saladas", "itens": [] }
+  ]
+}

@@ -12,6 +12,7 @@ import { useIr } from "../navegar";
 export default function Cardapio() {
   const cardapio = useCardapio();
   const { pratos, receitas } = cardapio;
+  const itensAcomp = cardapio.acompanhamentos?.itens || {};
   const { sem, acoes, codigo } = useSemana();
   const avisar = useAviso();
   const ir = useIr();
@@ -89,6 +90,11 @@ export default function Cardapio() {
                     <span>
                       <span className="entrada-dia">{DIAS[i]}</span>
                       <span className="entrada-nome">{p.nome}</span>
+                      {(sem.dias[i].acompanhamentos || []).filter((a) => itensAcomp[a]).length > 0 && (
+                        <span className="entrada-acomp">
+                          {sem.dias[i].acompanhamentos.filter((a) => itensAcomp[a]).map((a) => <span key={a}>+ {itensAcomp[a].nome}</span>)}
+                        </span>
+                      )}
                       <span className="entrada-acao">Ver receita</span>
                     </span>
                     <img src={p.img} alt="" />

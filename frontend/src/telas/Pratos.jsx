@@ -22,11 +22,13 @@ export default function Pratos() {
 
   const semDepois = { ...sem, dias: { ...sem.dias, [d]: { prato_id: sel } } };
   const nx = editando ? -1 : proximoAberto(semDepois, d + 1);
-  const rotulo = !sel ? "Toque em um prato" : nx < 0 ? "Confirmar e ver a semana" : `Confirmar e ir para ${DIAS[nx].toLowerCase()}`;
+  const rotulo = !sel ? "Toque em um prato"
+    : ir.temAcompanhamentos() ? "Confirmar e escolher acompanhamentos"
+    : nx < 0 ? "Confirmar e ver a semana" : `Confirmar e ir para ${DIAS[nx].toLowerCase()}`;
 
   function confirmar() {
     acoes.escolher(d, sel);
-    ir.avancar(semDepois, d, editando, `${DIAS[d]}: ${pratos[sel].nome}`);
+    ir.depoisDaProteina(semDepois, d, editando, `${DIAS[d]}: ${pratos[sel].nome}`);
   }
 
   return (

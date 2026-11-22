@@ -7,6 +7,8 @@ Tabelas:
   familias(codigo, criada_em, atualizada_em)
   dias(codigo, dia, prato_id, pulado)        -> um registro por dia decidido (0 = segunda)
   compras(codigo, dia, itens)                -> índices dos ingredientes já no carrinho (JSON)
+  acompanhamentos(codigo, dia, item_id, ordem) -> acompanhamentos do dia (zero ou mais). Tabela nova:
+                                                semanas antigas simplesmente não têm linhas aqui.
 """
 import json
 import secrets
@@ -36,6 +38,13 @@ CREATE TABLE IF NOT EXISTS compras(
   dia INTEGER NOT NULL,
   itens TEXT NOT NULL,
   PRIMARY KEY(codigo, dia)
+);
+CREATE TABLE IF NOT EXISTS acompanhamentos(
+  codigo TEXT NOT NULL REFERENCES familias(codigo) ON DELETE CASCADE,
+  dia INTEGER NOT NULL CHECK(dia BETWEEN 0 AND 6),
+  item_id TEXT NOT NULL,
+  ordem INTEGER NOT NULL,
+  PRIMARY KEY(codigo, dia, item_id)
 );
 """
 
@@ -118,6 +127,11 @@ class Banco:
                 str(r["dia"]): json.loads(r["itens"])
                 for r in c.execute("SELECT * FROM compras WHERE codigo=? ORDER BY dia", (codigo,))
             }
+            # acompanhamentos só aparecem no dia quando existem: semanas antigas ficam com a mesma resposta
+            for r in c.execute("SELECT dia, item_id FROM acompanhamentos WHERE codigo=? ORDER BY dia, ordem", (codigo,)):
+                d = dias.get(str(r["dia"]))
+                if d and d.get("prato_id"):
+                    d.setdefault("acompanhamentos", []).append(r["item_id"])
         return {"codigo": codigo, "dias": dias, "compras": compras, "atualizada_em": fam["atualizada_em"]}
 
     def _tocar(self, c, codigo):
@@ -130,6 +144,9 @@ class Banco:
             # trocou o prato (ou pulou): o carrinho daquele dia não vale mais
             if not antigo or antigo["prato_id"] != prato_id or pulado:
                 c.execute("DELETE FROM compras WHERE codigo=? AND dia=?", (codigo, dia))
+            # trocar a proteína mantém os acompanhamentos; pular o dia (sem almoço) tira
+            if pulado:
+                c.execute("DELETE FROM acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
             c.execute(
                 "INSERT INTO dias VALUES(?,?,?,?) ON CONFLICT(codigo,dia) DO UPDATE SET prato_id=excluded.prato_id, pulado=excluded.pulado",
                 (codigo, dia, None if pulado else prato_id, int(pulado)),
@@ -140,12 +157,22 @@ class Banco:
         with self.conexao() as c:
             c.execute("DELETE FROM dias WHERE codigo=? AND dia=?", (codigo, dia))
             c.execute("DELETE FROM compras WHERE codigo=? AND dia=?", (codigo, dia))
+            c.execute("DELETE FROM acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
             self._tocar(c, codigo)
 
     def prato_do_dia(self, codigo: str, dia: int) -> str | None:
         with self.conexao() as c:
             r = c.execute("SELECT prato_id FROM dias WHERE codigo=? AND dia=?", (codigo, dia)).fetchone()
             return r["prato_id"] if r else None
+
+    # ---------- acompanhamentos ----------
+    def definir_acompanhamentos(self, codigo: str, dia: int, itens: list[str]):
+        """Substitui os acompanhamentos do dia (ordem preservada, sem repetir)."""
+        with self.conexao() as c:
+            c.execute("DELETE FROM acompanhamentos WHERE codigo=? AND dia=?", (codigo, dia))
+            for ordem, item in enumerate(dict.fromkeys(itens)):
+                c.execute("INSERT INTO acompanhamentos VALUES(?,?,?,?)", (codigo, dia, item, ordem))
+            self._tocar(c, codigo)
 
     # ---------- compras ----------
     def definir_compras(self, codigo: str, dia: int, itens: list[int]):
@@ -162,8 +189,12 @@ class Banco:
         with self.conexao() as c:
             c.execute("DELETE FROM dias WHERE codigo=?", (codigo,))
             c.execute("DELETE FROM compras WHERE codigo=?", (codigo,))
+            c.execute("DELETE FROM acompanhamentos WHERE codigo=?", (codigo,))
             for dia, v in dias.items():
                 c.execute("INSERT INTO dias VALUES(?,?,?,?)", (codigo, int(dia), v.get("prato_id"), int(bool(v.get("pulado")))))
+                if v.get("prato_id"):
+                    for ordem, item in enumerate(dict.fromkeys(v.get("acompanhamentos") or [])):
+                        c.execute("INSERT INTO acompanhamentos VALUES(?,?,?,?)", (codigo, int(dia), item, ordem))
             for dia, itens in compras.items():
                 c.execute("INSERT INTO compras VALUES(?,?,?)", (codigo, int(dia), json.dumps(sorted(set(itens)))))
             self._tocar(c, codigo)
