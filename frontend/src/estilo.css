@@ -125,7 +125,8 @@ main { flex: 1; padding: var(--e6) var(--margem) var(--e10); }
   padding: calc(var(--e2) + env(safe-area-inset-top)) var(--margem) var(--e3);
 }
 .topo-linha { display: flex; align-items: center; gap: var(--e2); min-height: var(--toque); }
-.marca { flex: 1; font: 500 22px/1.1 var(--serif); color: var(--carvao); }
+.marca { flex: 1; display: block; font: 500 22px/1.1 var(--serif); color: var(--carvao); text-align: left; padding: 9px 0; }
+@media (hover: hover) { button.marca:hover { color: var(--terracota); } }
 .marca svg { width: 30px; height: 14px; color: var(--oliva); vertical-align: middle; margin-left: 6px; }
 .icone {
   width: 40px; height: 40px; margin-left: -8px; border-radius: var(--raio-pilula);

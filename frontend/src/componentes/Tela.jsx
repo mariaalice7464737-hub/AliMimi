@@ -24,7 +24,7 @@ export default function Tela({ dia = null, voltarPara, noFluxo = false, rodape, 
       <header className="topo">
         <div className="topo-linha">
           {mostraVoltar && <button className="icone" aria-label="Voltar" onClick={() => ir.voltar(voltarPara || undefined)}><IcVoltar /></button>}
-          <span className="marca">Almoço <em>da</em> Semana<Ramo /></span>
+          <button className="marca" aria-label="Almoço da Semana: ir para o cardápio" onClick={() => ir.cardapio()}>Almoço <em>da</em> Semana<Ramo /></button>
           <button className="ir-cardapio" aria-label="Cardápio" aria-current={naCardapio ? "page" : undefined} onClick={() => ir.cardapio()}>
             <IcCardapio /><span className="rotulo-curto">Cardápio</span>
           </button>
